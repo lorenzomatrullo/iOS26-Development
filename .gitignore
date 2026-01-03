@@ -1,0 +1,72 @@
+### OS / General
+.DS_Store
+Thumbs.db
+*.log
+*~
+*.swp
+*.swo
+
+### VS Code
+.vscode/
+*.code-workspace
+
+### JetBrains / Other IDEs
+.idea/
+*.iml
+.fleet/
+
+### Claude Code / Cursor
+.claude/
+.cursor/
+
+### Xcode / Swift / iOS
+
+## Build products
+build/
+DerivedData/
+
+## Xcode user data
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+xcuserdata/
+
+## Swift Package Manager
+.build/
+.swiftpm/xcode/package.xcworkspacedata
+
+## CocoaPods
+Pods/
+Podfile.lock
+
+## Carthage
+Carthage/Build/
+
+## Accio
+Dependencies/
+.accio/
+
+## Fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots/**/*.png
+fastlane/test_output/
+
+## Archives
+*.xcarchive
+
+## Symbolication
+*.dSYM.zip
+*.dSYM
+
+## Playground
+timeline.xctimeline
+playground.xcworkspace
+
+## SwiftLint / Logs
+swiftlint.log
