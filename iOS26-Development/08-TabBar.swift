@@ -1,7 +1,7 @@
 import SwiftUI
 
 // Three-tab layout using TabView.
-struct TabViewBasicsView: View {
+struct TabBarView: View {
     var body: some View {
         TabView {
             VStack(spacing: 12) {
@@ -29,5 +29,5 @@ struct TabViewBasicsView: View {
 }
 
 #Preview {
-    TabViewBasicsView()
+    TabBarView()
 }

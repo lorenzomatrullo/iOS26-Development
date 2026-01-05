@@ -31,16 +31,23 @@ For more details on Swift development with VS Code, see the official docs:
 ### Repository Structure
 
 - **`iOS26-Development`**: Main SwiftUI app target.
-  - `App.swift`: App entry point that launches one of the lesson views.
+  - **`Application/`**: App entry point and navigation controller.
+    - `App.swift`: Main app entry point.
+    - `ViewPickerContainer.swift`: Lesson selector and navigation controller.
   - `01-TextAndModifiers.swift`: Text styling and common modifiers.
   - `02-StacksAndSpacing.swift`: VStack, HStack, ZStack, and spacing.
   - `03-ImagesAndSFSymbols.swift`: Asset images and SF Symbols.
-  - `04-StateAndButtons.swift`: @State, buttons, and simple interaction.
-  - `05-ListsAndForEach.swift`: Lists of data with ForEach.
-  - `06-NavigationStack.swift`: NavigationStack and NavigationLink.
-  - `07-TabView.swift`: TabView for basic app structure.
-  - `08-FormsAndInputs.swift`: Form, text fields, toggles, and pickers.
-  - `09-AnimationsAndTransitions.swift`: Implicit animations and transitions.
+  - `04-StateAndButtons.swift`: @State, buttons, and toggles.
+  - `05-Buttons.swift`: Button styles (standard and Liquid Glass styles).
+  - `06-ListsAndForEach.swift`: Lists of data with ForEach.
+  - `07-NavigationStack.swift`: NavigationStack and NavigationLink.
+  - `08-TabBar.swift`: TabView for basic app structure.
+  - `09-FormsAndSections.swift`: Form, Sections, text fields, and toggles.
+  - `10-Sliders.swift`: Slider controls with ranges, steps, labels, and tick marks.
+  - `11-PickerStyles.swift`: Picker with different styles (menu, segmented, wheel, inline).
+  - `12-Menus.swift`: Menus, context menus, and menu organization.
+  - `13-AnimationsAndTransitions.swift`: Implicit animations and transitions.
+  - `LiquidGlass.swift`, `LiquidGlassNamespace.swift`, `LiquidGlassTransition.swift`: Bonus lessons.
 - **`iOS26-Development.xcodeproj`**: Xcode project.
 
 Each numbered file is independent and has its own `#Preview`, so you can open and run any lesson without wiring it into the app entry point.
@@ -49,53 +56,91 @@ Each numbered file is independent and has its own `#Preview`, so you can open an
 
 ### Learning Path
 
-#### Basics – Layout, text, and previews
+Follow the lessons in order for the best learning experience. Each lesson builds on concepts from previous ones.
+
+#### Part 1: Fundamentals – Layout and Text
 
 - **[01 – Text and Modifiers](iOS26-Development/01-TextAndModifiers.swift)**
-  Fonts, colors, emphasis, alignment, and line limits.
-- **[02 – Stacks and Spacing](iOS26-Development/02-StacksAndSpacing.swift)**
-  VStack, HStack, ZStack, spacers, and simple backgrounds.
+  **Start here!** Learn the basics: displaying text with fonts, colors, emphasis, alignment, and line limits.
 
-#### Visuals – Images and symbols
+- **[02 – Stacks and Spacing](iOS26-Development/02-StacksAndSpacing.swift)**
+  Master layout fundamentals with VStack, HStack, ZStack, spacers, and simple backgrounds.
 
 - **[03 – Images and SF Symbols](iOS26-Development/03-ImagesAndSFSymbols.swift)**
-  Using asset images, resizing, clipping, and SF Symbols.
+  Add visual content using asset images, resizing, clipping, and SF Symbols.
 
-#### State and interaction
+#### Part 2: Interactivity and State
 
 - **[04 – State and Buttons](iOS26-Development/04-StateAndButtons.swift)**
-  `@State`, buttons, toggles, and reactive text.
+  Your first interactive views: `@State`, buttons, toggles, and reactive text.
 
-#### Lists, navigation, and app structure
+- **[05 – Button Styles](iOS26-Development/05-Buttons.swift)**
+  Comprehensive showcase of all button styles including standard and Liquid Glass variants.
 
-- **[05 – Lists and ForEach](iOS26-Development/05-ListsAndForEach.swift)**
-  List views with dynamic data and simple row layouts.
-- **[06 – NavigationStack](iOS26-Development/06-NavigationStack.swift)**
-  NavigationStack, NavigationLink, and a simple detail screen.
-- **[07 – TabView](iOS26-Development/07-TabView.swift)**
-  TabView with multiple sections such as Home, Library, and Settings.
+- **[06 – Lists and ForEach](iOS26-Development/06-ListsAndForEach.swift)**
+  Display dynamic data with List views and simple row layouts.
 
-#### Forms and animations
+#### Part 3: Navigation and App Structure
 
-- **[08 – Forms and input controls](iOS26-Development/08-FormsAndInputs.swift)**
-  Form, TextField, Picker, and Toggle for basic settings screens.
-- **[09 – Animations and transitions](iOS26-Development/09-AnimationsAndTransitions.swift)**
-  Toggling views with implicit animations and combined transitions.
+- **[07 – NavigationStack](iOS26-Development/07-NavigationStack.swift)**
+  Navigate between screens using NavigationStack and NavigationLink.
+
+- **[08 – TabBar](iOS26-Development/08-TabBar.swift)**
+  Structure your app with TabView for multiple sections (Home, Library, Settings).
+
+#### Part 4: Forms and Input Controls
+
+- **[09 – Forms and Sections](iOS26-Development/09-FormsAndSections.swift)**
+  Build settings screens with Form, Sections, TextField, and Toggle.
+
+- **[10 – Sliders](iOS26-Development/10-Sliders.swift)**
+  Work with slider controls for numeric input: ranges, steps, labels, tick marks, and visual feedback.
+
+- **[11 – Picker Styles](iOS26-Development/11-PickerStyles.swift)**
+  Master selection controls: Picker with menu, segmented, wheel, inline, and navigation link styles.
+
+- **[12 – Menus](iOS26-Development/12-Menus.swift)**
+  Present contextual actions with Menus, submenus, dividers, and context menus.
+
+#### Part 5: Polish and Effects
+
+- **[13 – Animations and Transitions](iOS26-Development/13-AnimationsAndTransitions.swift)**
+  Add polish with implicit animations and smooth view transitions.
+
+#### Bonus: Advanced Techniques
+
+The Liquid Glass lessons (accessible via submenu in the app) demonstrate advanced techniques for creating modern, translucent UI effects:
+- **Liquid Glass**: Basic translucent background effects
+- **Liquid Glass Namespace**: Namespace-based animations
+- **Liquid Glass Transition**: Advanced transition animations
 
 ---
 
 ### How to Work Through the Repo
 
-- **New to SwiftUI?**
-  Start with `01-TextAndModifiers.swift`. Open it in Xcode, read the code, then run the preview. Modify the text styles to see how SwiftUI responds.
+**This repository is designed as a progressive course.** Follow the lessons in order from 01 to 13 for the best learning experience.
 
-- **Expanding the course**  
-  When you are ready for the next concept, move to the next numbered file. If you want to add more topics, create a new Swift file with the next number and a clear name, focusing that file on one idea only.
+#### For Beginners
 
-- **Reviewing topics**  
-  Use the numbered filenames as quick anchors. If you need a reminder on navigation or tab bars later, jump directly to the corresponding numbered file.
+1. **Start with Lesson 01**
+   Open `01-TextAndModifiers.swift` in Xcode. Read the code and comments, then run the preview. Try modifying values to see how SwiftUI responds.
 
-- **Using Xcode and VS Code together**  
-  Use Xcode to run the iOS app and previews, and VS Code as a lightweight editor and navigator with Code Runner for small, non‑UI Swift experiments.
+2. **Progress sequentially**
+   Move to the next numbered file when you're comfortable with the current concepts. Each lesson builds on previous ones.
 
-As you add more files, this repository becomes a structured SwiftUI notebook: short, ordered, and always runnable.
+3. **Use the app picker**
+   Run the app in Xcode. The view picker in the toolbar lets you jump between lessons while learning. The app starts at Lesson 01 by default.
+
+4. **Experiment freely**
+   Modify the code, break things, and fix them. Each file has its own `#Preview`, so changes won't affect other lessons.
+
+#### For Reference
+
+- **Quick topic lookup**
+  Use the numbered filenames as anchors. Need a reminder on Forms? Jump to `08-FormsAndSections.swift`.
+
+- **Extending the course**
+  Add new topics by creating files like `14-YourTopic.swift`. Keep each file focused on one concept.
+
+- **Using Xcode and VS Code together**
+  Use Xcode to run the iOS app and previews. Use VS Code as a lightweight editor for browsing code and small Swift experiments with Code Runner.

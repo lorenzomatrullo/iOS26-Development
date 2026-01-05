@@ -4,22 +4,24 @@ import SwiftUI
 struct TextAndModifiersView: View {
     var body: some View {
         // Different text styles stacked in one column.
-        Text("Text")
-        
-        Text("Large title")
-            .font(.largeTitle)
-        
-        Text("Secondary information")
-            .foregroundStyle(.secondary)
-        
-        Text("Emphasized text")
-            .bold()
-            .underline()
-        
-        Text("Custom alignment and line limit for longer text that wraps onto multiple lines in the layout.")
-            .multilineTextAlignment(.center)
-            .lineLimit(2)
-            .padding()
+        VStack(spacing: 20) {
+            Text("Text")
+
+            Text("Large title")
+                .font(.largeTitle)
+
+            Text("Secondary information")
+                .foregroundStyle(.secondary)
+
+            Text("Emphasized text")
+                .bold()
+                .underline()
+
+            Text("Custom alignment and line limit for longer text that wraps onto multiple lines in the layout.")
+                .multilineTextAlignment(.center)
+                .lineLimit(2)
+                .padding()
+        }
     }
 }
 

@@ -1,7 +1,7 @@
 import SwiftUI
 
 // Basic navigation: tap a row to push a detail screen.
-struct NavigationStackBasicsView: View {
+struct NavigationStackView: View {
     // List of lesson numbers for the rows.
     let lessons = Array(1...5)
     
@@ -32,5 +32,5 @@ private struct DetailView: View {
 }
 
 #Preview {
-    NavigationStackBasicsView()
+    NavigationStackView()
 }
