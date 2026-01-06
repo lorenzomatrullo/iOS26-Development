@@ -15,6 +15,8 @@ enum AppView: String, CaseIterable, Identifiable {
     case pickerStyles = "11 - Picker Styles"
     case menus = "12 - Menus"
     case animationsAndTransitions = "13 - Animations & Transitions"
+    case semanticToolbars = "14 - Semantic Toolbars"
+    case positionalToolbars = "15 - Positional Toolbars"
     case liquidGlass = "Liquid Glass"
     case liquidGlassNamespace = "Liquid Glass Namespace"
     case liquidGlassTransition = "Liquid Glass Transition"
@@ -30,36 +32,41 @@ struct ViewPickerContainer: View {
         NavigationStack {
             selectedViewContent
                 .toolbar {
-                    ToolbarItem(placement: .primaryAction) {
-                        Menu {
-                            Picker("Select Lesson", selection: $selectedView) {
-                                Text("01 - Text & Modifiers").tag(AppView.textAndModifiers)
-                                Text("02 - Stacks & Spacing").tag(AppView.stacksAndSpacing)
-                                Text("03 - Images & SF Symbols").tag(AppView.imagesAndSymbols)
-                                Text("04 - State & Buttons").tag(AppView.stateAndButtons)
-                                Text("05 - Button Styles").tag(AppView.buttons)
-                                Text("06 - Lists & ForEach").tag(AppView.listsAndForEach)
-                                Text("07 - Navigation Stack").tag(AppView.navigationStack)
-                                Text("08 - Tab View").tag(AppView.tabView)
-                                Text("09 - Forms & Sections").tag(AppView.formsAndSections)
-                                Text("10 - Sliders").tag(AppView.sliders)
-                                Text("11 - Picker Styles").tag(AppView.pickerStyles)
-                                Text("12 - Menus").tag(AppView.menus)
-                                Text("13 - Animations & Transitions").tag(AppView.animationsAndTransitions)
-                            }
-                            
-                            Divider()
-
-                            // Liquid Glass submenu
-                            Menu("Liquid Glass") {
-                                Picker("Select Liquid Glass Lesson", selection: $selectedView) {
-                                    Text("Liquid Glass").tag(AppView.liquidGlass)
-                                    Text("Liquid Glass Namespace").tag(AppView.liquidGlassNamespace)
-                                    Text("Liquid Glass Transition").tag(AppView.liquidGlassTransition)
+                    // Hide toolbar for toolbar lessons to avoid nested NavigationStack conflicts
+                    if selectedView != .semanticToolbars && selectedView != .positionalToolbars {
+                        ToolbarItem(placement: .primaryAction) {
+                            Menu {
+                                Picker("Select Lesson", selection: $selectedView) {
+                                    Text("01 - Text & Modifiers").tag(AppView.textAndModifiers)
+                                    Text("02 - Stacks & Spacing").tag(AppView.stacksAndSpacing)
+                                    Text("03 - Images & SF Symbols").tag(AppView.imagesAndSymbols)
+                                    Text("04 - State & Buttons").tag(AppView.stateAndButtons)
+                                    Text("05 - Button Styles").tag(AppView.buttons)
+                                    Text("06 - Lists & ForEach").tag(AppView.listsAndForEach)
+                                    Text("07 - Navigation Stack").tag(AppView.navigationStack)
+                                    Text("08 - Tab View").tag(AppView.tabView)
+                                    Text("09 - Forms & Sections").tag(AppView.formsAndSections)
+                                    Text("10 - Sliders").tag(AppView.sliders)
+                                    Text("11 - Picker Styles").tag(AppView.pickerStyles)
+                                    Text("12 - Menus").tag(AppView.menus)
+                                    Text("13 - Animations & Transitions").tag(AppView.animationsAndTransitions)
+                                    Text("14 - Semantic Toolbars").tag(AppView.semanticToolbars)
+                                    Text("15 - Positional Toolbars").tag(AppView.positionalToolbars)
                                 }
+
+                                Divider()
+
+                                // Liquid Glass submenu
+                                Menu("Liquid Glass") {
+                                    Picker("Select Liquid Glass Lesson", selection: $selectedView) {
+                                        Text("Liquid Glass").tag(AppView.liquidGlass)
+                                        Text("Liquid Glass Namespace").tag(AppView.liquidGlassNamespace)
+                                        Text("Liquid Glass Transition").tag(AppView.liquidGlassTransition)
+                                    }
+                                }
+                            } label: {
+                                Label("View Selector", systemImage: "rectangle.stack")
                             }
-                        } label: {
-                            Label("View Selector", systemImage: "rectangle.stack")
                         }
                     }
                 }
@@ -95,6 +102,10 @@ struct ViewPickerContainer: View {
             MenusView()
         case .animationsAndTransitions:
             AnimationsAndTransitionsView()
+        case .semanticToolbars:
+            SemanticToolbarsView()
+        case .positionalToolbars:
+            PositionalToolbarsView()
         case .buttons:
             ButtonsView()
         case .liquidGlass:

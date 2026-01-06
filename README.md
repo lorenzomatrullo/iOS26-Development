@@ -47,6 +47,8 @@ For more details on Swift development with VS Code, see the official docs:
   - `11-PickerStyles.swift`: Picker with different styles (menu, segmented, wheel, inline).
   - `12-Menus.swift`: Menus, context menus, and menu organization.
   - `13-AnimationsAndTransitions.swift`: Implicit animations and transitions.
+  - `14-SemanticToolbars.swift`: Semantic toolbar placements for platform-appropriate positioning.
+  - `15-PositionalToolbars.swift`: Positional toolbar placements with grouping and spacers.
   - `LiquidGlass.swift`, `LiquidGlassNamespace.swift`, `LiquidGlassTransition.swift`: Bonus lessons.
 - **`iOS26-Development.xcodeproj`**: Xcode project.
 
@@ -106,6 +108,14 @@ Follow the lessons in order for the best learning experience. Each lesson builds
 
 - **[13 – Animations and Transitions](iOS26-Development/13-AnimationsAndTransitions.swift)**
   Add polish with implicit animations and smooth view transitions.
+
+#### Part 6: Toolbars and Navigation Customization
+
+- **[14 – Semantic Toolbars](iOS26-Development/14-SemanticToolbars.swift)**
+  Use semantic placement modifiers to position toolbar items appropriately across platforms.
+
+- **[15 – Positional Toolbars](iOS26-Development/15-PositionalToolbars.swift)**
+  Control exact toolbar item placement with positional modifiers, grouping, and spacers.
 
 #### Bonus: Advanced Techniques
 

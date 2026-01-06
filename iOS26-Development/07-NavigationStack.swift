@@ -13,6 +13,7 @@ struct NavigationStackView: View {
                 }
             }
             .navigationTitle("Navigation")
+            .navigationSubtitle("Sub title of the navigation")
         }
     }
 }
