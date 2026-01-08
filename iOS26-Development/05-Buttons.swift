@@ -3,8 +3,7 @@ import SwiftUI
 // Button styles showcase for different contexts and emphasis levels.
 struct ButtonsView: View {
     var body: some View {
-        NavigationStack {
-            Form {
+        Form {
                 Section("Standard Button Styles") {
                     LabeledContent("Default") {
                         Button("Label") {}
@@ -42,9 +41,8 @@ struct ButtonsView: View {
                             .buttonStyle(.glassProminent)
                     }
                 }
-            }
-            .navigationTitle("Button Styles")
         }
+        .navigationTitle("05 - Button Styles")
     }
 }
 

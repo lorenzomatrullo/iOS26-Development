@@ -30,6 +30,7 @@ struct StacksAndSpacingView: View {
             }
         }
         .padding()
+        .navigationTitle("02 - Stacks & Spacing")
     }
 }
 

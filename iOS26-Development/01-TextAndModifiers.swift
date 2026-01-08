@@ -22,6 +22,7 @@ struct TextAndModifiersView: View {
                 .lineLimit(2)
                 .padding()
         }
+        .navigationTitle("01 - Text & Modifiers")
     }
 }
 

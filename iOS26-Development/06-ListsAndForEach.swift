@@ -6,19 +6,17 @@ struct ListsAndForEachView: View {
     let items = ["SwiftUI", "Combine", "Widgets", "Animations"]
     
     var body: some View {
-        NavigationStack {
-            List {
-                // One row per item in the array.
-                ForEach(items, id: \.self) { item in
-                    HStack {
-                        Image(systemName: "checkmark.circle")
-                            .foregroundStyle(.green)
-                        Text(item)
-                    }
+        List {
+            // One row per item in the array.
+            ForEach(items, id: \.self) { item in
+                HStack {
+                    Image(systemName: "checkmark.circle")
+                        .foregroundStyle(.green)
+                    Text(item)
                 }
             }
-            .navigationTitle("Topics")
         }
+        .navigationTitle("06 - Lists & ForEach")
     }
 }
 

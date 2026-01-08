@@ -6,8 +6,7 @@ struct MenusView: View {
     @State private var showAlert = false
     
     var body: some View {
-        NavigationStack {
-            Form {
+        Form {
                 // Basic menu with simple actions.
                 Section {
                     Menu("Simple Menu") {
@@ -180,15 +179,14 @@ struct MenusView: View {
                 } footer: {
                     Text("Context menus appear on long press and work similarly to regular menus.")
                 }
-            }
-            .listSectionSpacing(20)
-            .navigationTitle("Menus")
-            .alert("Delete Item", isPresented: $showAlert) {
-                Button("Cancel", role: .cancel) {}
-                Button("Delete", role: .destructive) {}
-            } message: {
-                Text("Are you sure you want to delete this item?")
-            }
+        }
+        .listSectionSpacing(20)
+        .navigationTitle("12 - Menus")
+        .alert("Delete Item", isPresented: $showAlert) {
+            Button("Cancel", role: .cancel) {}
+            Button("Delete", role: .destructive) {}
+        } message: {
+            Text("Are you sure you want to delete this item?")
         }
     }
 }

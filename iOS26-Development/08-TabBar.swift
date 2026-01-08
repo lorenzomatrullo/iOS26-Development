@@ -25,6 +25,7 @@ struct TabBarView: View {
                 Label("Settings", systemImage: "gearshape")
             }
         }
+        .navigationTitle("08 - Tab View")
     }
 }
 

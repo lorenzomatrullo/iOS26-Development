@@ -23,6 +23,7 @@ struct ImagesAndSFSymbolsView: View {
             Spacer()
         }
         .padding()
+        .navigationTitle("03 - Images & SF Symbols")
     }
 }
 

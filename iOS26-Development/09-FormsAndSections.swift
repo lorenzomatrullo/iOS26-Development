@@ -9,8 +9,7 @@ struct FormsAndSectionsView: View {
     @State private var soundEnabled = false
     
     var body: some View {
-        NavigationStack {
-            Form {
+        Form {
                 // Section with a simple header string.
                 Section("Profile") {
                     TextField("Username", text: $username)
@@ -31,9 +30,7 @@ struct FormsAndSectionsView: View {
                 
                 // Section without a header.
                 Section {
-                    Button("Save Changes") {
-                        
-                    }
+                    Button("Save Changes") {}
                     
                     Button("Reset to Defaults", role: .destructive) {
                         username = ""
@@ -42,9 +39,8 @@ struct FormsAndSectionsView: View {
                         soundEnabled = false
                     }
                 }
-            }
-            .navigationTitle("Settings")
         }
+        .navigationTitle("09 - Forms & Sections")
     }
 }
 
