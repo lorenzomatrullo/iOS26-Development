@@ -10,7 +10,7 @@ struct PositionalToolbarsView: View {
         VStack {
 
         }
-        .navigationTitle("15 - Positional Toolbars")
+        .navigationTitle("16 - Positional Toolbars")
         .navigationSubtitle("grouping, spacers and bottom bars") // it will be leading placed if the text is long enough
         .toolbar {
             // Single toolbar items

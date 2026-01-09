@@ -181,7 +181,7 @@ struct MenusView: View {
                 }
         }
         .listSectionSpacing(20)
-        .navigationTitle("12 - Menus")
+        .navigationTitle("14 - Menus")
         .alert("Delete Item", isPresented: $showAlert) {
             Button("Cancel", role: .cancel) {}
             Button("Delete", role: .destructive) {}

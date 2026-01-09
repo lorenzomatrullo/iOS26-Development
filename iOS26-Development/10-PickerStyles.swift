@@ -85,7 +85,7 @@ struct PickerStylesView: View {
             }
         }
         .listSectionSpacing(20)
-        .navigationTitle("11 - Picker Styles")
+        .navigationTitle("10 - Picker Styles")
     }
 }
 

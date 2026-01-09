@@ -10,7 +10,7 @@ struct SemanticToolbarsView: View {
         VStack {
             EmptyView()
         }
-        .navigationTitle("14 - Semantic Toolbars")
+        .navigationTitle("15 - Semantic Toolbars")
         .navigationSubtitle("symantic toolbar placement") // it will be leading placed if the text is long enough
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {

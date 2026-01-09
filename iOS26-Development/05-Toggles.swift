@@ -16,7 +16,7 @@ struct TogglesView: View {
             Text(isOn ? "Toggle is on" : "Toggle is off")
                 .foregroundStyle(isOn ? .green : .secondary)
         }
-        .navigationTitle("04 - Toggles")
+        .navigationTitle("05 - Toggles")
     }
 }
 

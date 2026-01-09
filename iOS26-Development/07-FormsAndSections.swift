@@ -40,7 +40,7 @@ struct FormsAndSectionsView: View {
                     }
                 }
         }
-        .navigationTitle("09 - Forms & Sections")
+        .navigationTitle("07 - Forms & Sections")
     }
 }
 

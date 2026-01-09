@@ -42,7 +42,7 @@ struct ButtonsView: View {
                     }
                 }
         }
-        .navigationTitle("05 - Button Styles")
+        .navigationTitle("04 - Button Styles")
     }
 }
 
