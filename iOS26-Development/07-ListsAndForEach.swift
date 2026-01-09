@@ -16,7 +16,7 @@ struct ListsAndForEachView: View {
                 }
             }
         }
-        .navigationTitle("06 - Lists & ForEach")
+        .navigationTitle("07 - Lists & ForEach")
     }
 }
 

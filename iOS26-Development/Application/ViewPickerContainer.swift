@@ -6,30 +6,31 @@ enum AppView: String, CaseIterable, Identifiable {
     case textAndModifiers = "01 - Text & Modifiers"
     case stacksAndSpacing = "02 - Stacks & Spacing"
     case imagesAndSymbols = "03 - Images & SF Symbols"
-    case buttons = "04 - Button Styles"
-    case stateAndButtons = "05 - Toggles"
+    case scrollView = "04 - ScrollView"
+    case buttons = "05 - Button Styles"
+    case stateAndButtons = "06 - Toggles"
 
     // Basic Interaction & Organization
-    case listsAndForEach = "06 - Lists & ForEach"
-    case formsAndSections = "07 - Forms & Sections"
-    case groupBox = "08 - GroupBox"
+    case listsAndForEach = "07 - Lists & ForEach"
+    case formsAndSections = "08 - Forms & Sections"
+    case groupBox = "09 - GroupBox"
 
     // Input Controls
-    case sliders = "09 - Sliders"
-    case pickerStyles = "10 - Picker Styles"
+    case sliders = "10 - Sliders"
+    case pickerStyles = "11 - Picker Styles"
 
     // Navigation & Structure
-    case navigationStack = "11 - Navigation Stack"
-    case sheets = "12 - Sheets"
-    case tabView = "13 - Tab View"
+    case navigationStack = "12 - Navigation Stack"
+    case sheets = "13 - Sheets"
+    case tabView = "14 - Tab View"
 
     // Advanced Interactions
-    case menus = "14 - Menus"
-    case semanticToolbars = "15 - Semantic Toolbars"
-    case positionalToolbars = "16 - Positional Toolbars"
+    case menus = "15 - Menus"
+    case semanticToolbars = "16 - Semantic Toolbars"
+    case positionalToolbars = "17 - Positional Toolbars"
 
     // Polish & Enhancement
-    case animationsAndTransitions = "17 - Animations & Transitions"
+    case animationsAndTransitions = "18 - Animations & Transitions"
 
     // Liquid Glass (Advanced Demos)
     case liquidGlass = "Liquid Glass"
@@ -55,20 +56,21 @@ struct ViewPickerContainer: View {
                                     Text("01 - Text & Modifiers").tag(AppView.textAndModifiers)
                                     Text("02 - Stacks & Spacing").tag(AppView.stacksAndSpacing)
                                     Text("03 - Images & SF Symbols").tag(AppView.imagesAndSymbols)
-                                    Text("04 - Button Styles").tag(AppView.buttons)
-                                    Text("05 - Toggles").tag(AppView.stateAndButtons)
-                                    Text("06 - Lists & ForEach").tag(AppView.listsAndForEach)
-                                    Text("07 - Forms & Sections").tag(AppView.formsAndSections)
-                                    Text("08 - GroupBox").tag(AppView.groupBox)
-                                    Text("09 - Sliders").tag(AppView.sliders)
-                                    Text("10 - Picker Styles").tag(AppView.pickerStyles)
-                                    Text("11 - Navigation Stack").tag(AppView.navigationStack)
-                                    Text("12 - Sheets").tag(AppView.sheets)
-                                    Text("13 - Tab View").tag(AppView.tabView)
-                                    Text("14 - Menus").tag(AppView.menus)
-                                    Text("15 - Semantic Toolbars").tag(AppView.semanticToolbars)
-                                    Text("16 - Positional Toolbars").tag(AppView.positionalToolbars)
-                                    Text("17 - Animations & Transitions").tag(AppView.animationsAndTransitions)
+                                    Text("04 - ScrollView").tag(AppView.scrollView)
+                                    Text("05 - Button Styles").tag(AppView.buttons)
+                                    Text("06 - Toggles").tag(AppView.stateAndButtons)
+                                    Text("07 - Lists & ForEach").tag(AppView.listsAndForEach)
+                                    Text("08 - Forms & Sections").tag(AppView.formsAndSections)
+                                    Text("09 - GroupBox").tag(AppView.groupBox)
+                                    Text("10 - Sliders").tag(AppView.sliders)
+                                    Text("11 - Picker Styles").tag(AppView.pickerStyles)
+                                    Text("12 - Navigation Stack").tag(AppView.navigationStack)
+                                    Text("13 - Sheets").tag(AppView.sheets)
+                                    Text("14 - Tab View").tag(AppView.tabView)
+                                    Text("15 - Menus").tag(AppView.menus)
+                                    Text("16 - Semantic Toolbars").tag(AppView.semanticToolbars)
+                                    Text("17 - Positional Toolbars").tag(AppView.positionalToolbars)
+                                    Text("18 - Animations & Transitions").tag(AppView.animationsAndTransitions)
                                 }
 
                                 Divider()
@@ -106,6 +108,8 @@ struct ViewPickerContainer: View {
             StacksAndSpacingView()
         case .imagesAndSymbols:
             ImagesAndSFSymbolsView()
+        case .scrollView:
+            ScrollViewView()
         case .stateAndButtons:
             TogglesView()
         case .listsAndForEach:

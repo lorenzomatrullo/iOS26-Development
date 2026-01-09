@@ -20,7 +20,7 @@ struct AnimationsAndTransitionsView: View {
                     .transition(.scale.combined(with: .opacity))
             }
         }
-        .navigationTitle("17 - Animations & Transitions")
+        .navigationTitle("18 - Animations & Transitions")
     }
 }
 

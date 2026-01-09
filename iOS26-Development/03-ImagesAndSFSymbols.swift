@@ -19,7 +19,7 @@ struct ImagesAndSFSymbolsView: View {
                     .foregroundStyle(.blue)
                     .font(.largeTitle)
             }
-
+            
             Spacer()
         }
         .padding()

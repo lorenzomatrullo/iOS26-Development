@@ -12,11 +12,11 @@ struct TogglesView: View {
                 Text("Connected to AirPods Pro")
                 Text("Battery: 100%")
             }
-
+            
             Text(isOn ? "Toggle is on" : "Toggle is off")
                 .foregroundStyle(isOn ? .green : .secondary)
         }
-        .navigationTitle("05 - Toggles")
+        .navigationTitle("06 - Toggles")
     }
 }
 

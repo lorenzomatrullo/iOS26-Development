@@ -5,12 +5,12 @@ import SwiftUI
 
 struct SemanticToolbarsView: View {
     var onReturnToFirstLesson: (() -> Void)? = nil
-
+    
     var body: some View {
         VStack {
             EmptyView()
         }
-        .navigationTitle("15 - Semantic Toolbars")
+        .navigationTitle("16 - Semantic Toolbars")
         .navigationSubtitle("symantic toolbar placement") // it will be leading placed if the text is long enough
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
@@ -19,14 +19,14 @@ struct SemanticToolbarsView: View {
                     returnToFirstLesson()
                 }
             }
-
+            
             ToolbarItem(placement: .destructiveAction) {
                 Button("Delete", systemImage: "trash") {
                     // perform delete action
                 }
                 .tint(.red)
             }
-
+            
             ToolbarItem(placement: .confirmationAction) {
                 Button("Done", systemImage: "checkmark") {
                     // perform action
@@ -34,7 +34,7 @@ struct SemanticToolbarsView: View {
             }
         }
     }
-
+    
     // Function to handle returning to the first lesson
     private func returnToFirstLesson() {
         onReturnToFirstLesson?()

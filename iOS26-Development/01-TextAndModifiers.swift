@@ -6,17 +6,17 @@ struct TextAndModifiersView: View {
         // Different text styles stacked in one column.
         VStack(spacing: 20) {
             Text("Text")
-
+            
             Text("Large title")
                 .font(.largeTitle)
-
+            
             Text("Secondary information")
                 .foregroundStyle(.secondary)
-
+            
             Text("Emphasized text")
                 .bold()
                 .underline()
-
+            
             Text("Custom alignment and line limit for longer text that wraps onto multiple lines in the layout.")
                 .multilineTextAlignment(.center)
                 .lineLimit(2)
