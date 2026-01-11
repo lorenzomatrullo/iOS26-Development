@@ -2,32 +2,105 @@ import SwiftUI
 
 // Three-tab layout using TabView.
 struct TabBarView: View {
+    @State private var searchText: String = ""
+    
     var body: some View {
         TabView {
-            VStack(spacing: 12) {
-                Text("Home")
-            }
-            .tabItem {
-                Label("Home", systemImage: "house")
+            Tab("Home", systemImage: "house") {
+                VStack {
+                    Text("Home")
+                }
             }
             
-            VStack(spacing: 12) {
+            Tab("New", systemImage: "sparkle") {
+                Text("New")
+            }
+            
+            Tab("Pages", systemImage: "music.pages.fill") {
+                ScrollView {
+                    VStack {
+                        ForEach(0..<35, id: \.self) { index in
+                            Text("Article \(index + 1)")
+                                .frame(maxWidth: .infinity)
+                                .padding()
+                                .background(.gray.opacity(0.2))
+                                .cornerRadius(8)
+                        }
+                    }
+                    .padding()
+                }
+            }
+            .badge("!")
+            
+            
+            Tab("Library", systemImage: "music.note.square.stack.fill") {
                 Text("Library")
             }
-            .tabItem {
-                Label("Library", systemImage: "books.vertical")
-            }
+            .badge(2)
             
-            VStack(spacing: 12) {
-                Text("Settings")
-            }
-            .tabItem {
-                Label("Settings", systemImage: "gearshape")
+            Tab("Search", systemImage: "magnifyingglass", role: .search) {
+                NavigationStack {
+                    EmptyView()
+                        .searchable(text: $searchText, prompt: "Search...")
+                }
             }
         }
+        .tint(.red)
+        .tabViewBottomAccessory {
+            MiniPlayerView()
+        }
+        .tabBarMinimizeBehavior(.onScrollDown)
         .navigationTitle("14 - Tab View")
     }
 }
+
+
+// Reusable Player Info
+func PlayerInfo(_ size: CGSize) -> some View {
+    HStack(spacing: 12) {
+        Image("album")
+            .resizable()
+            .frame(width: size.width, height: size.height)
+            .clipShape(RoundedRectangle(cornerRadius: size.height / 4))
+        
+        VStack(alignment: .leading) {
+            Text("MIA (feat. Drake)")
+                .font(.system(size: 14, weight: .bold))
+            
+            Text("Bad Bunny")
+                .font(.caption2)
+                .foregroundStyle(.gray)
+        }
+        .lineLimit(1)
+    }
+}
+
+// MiniPlayer View
+func MiniPlayerView() -> some View {
+    HStack(spacing: 16) {
+        PlayerInfo(.init(width: 30, height: 30))
+        
+        Spacer()
+        
+        // Action Buttons
+        Group {
+            Button {
+                
+            } label: {
+                Image(systemName: "play.fill")
+            }
+            
+            Button {
+                
+            } label: {
+                Image(systemName: "forward.fill")
+            }
+        }
+        .foregroundStyle(.black)
+    }
+    .padding(.horizontal, 15)
+}
+
 
 #Preview {
     TabBarView()
