@@ -4,6 +4,18 @@ import SwiftUI
 struct TabBarView: View {
     @State private var searchText: String = ""
     
+    // Customize tab bar badge colors using UIKit appearance API.
+    init() {
+        let item = UITabBarItemAppearance()
+        item.normal.badgeBackgroundColor = .systemGreen
+        item.selected.badgeBackgroundColor = .systemBlue
+        
+        let appearance = UITabBarAppearance()
+        appearance.stackedLayoutAppearance = item
+        UITabBar.appearance().standardAppearance = appearance
+    }
+    
+    
     var body: some View {
         TabView {
             Tab("Home", systemImage: "house") {
@@ -96,7 +108,7 @@ func MiniPlayerView() -> some View {
                 Image(systemName: "forward.fill")
             }
         }
-        .foregroundStyle(.black)
+        .foregroundStyle(.primary)
     }
     .padding(.horizontal, 15)
 }

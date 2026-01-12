@@ -10,9 +10,22 @@
 		84513B022EDC48C8005178C9 /* iOS26-Development.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS26-Development.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		84258F3B2F15533800B6C3B6 /* Exceptions for "iOS26-Development" folder in "iOS26-Development" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 84513B012EDC48C8005178C9 /* iOS26-Development */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		84513B042EDC48C8005178C9 /* iOS26-Development */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				84258F3B2F15533800B6C3B6 /* Exceptions for "iOS26-Development" folder in "iOS26-Development" target */,
+			);
 			path = "iOS26-Development";
 			sourceTree = "<group>";
 		};
@@ -258,6 +271,7 @@
 				DEVELOPMENT_TEAM = 638ACCAT45;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "iOS26-Development/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "iOS 26";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -293,6 +307,7 @@
 				DEVELOPMENT_TEAM = 638ACCAT45;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "iOS26-Development/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "iOS 26";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

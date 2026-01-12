@@ -4,6 +4,9 @@ import SwiftUI
 struct MenusView: View {
     @State private var selectedOption = "None"
     @State private var showAlert = false
+    @State private var bold = false
+    @State private var italic = false
+    @State private var underline = false
     
     var body: some View {
         Form {
@@ -31,19 +34,24 @@ struct MenusView: View {
                 Text("Menus present a list of actions when tapped.")
             }
             
+            
+            
             // Menu with SF Symbols.
             Section {
                 Menu {
                     Button(action: { selectedOption = "Edit" }) {
                         Label("Edit", systemImage: "pencil")
+                        Text("Modify the item")
                     }
                     
                     Button(action: { selectedOption = "Share" }) {
-                        Label("Share", systemImage: "square.and.arrow.up")
+                        Label("Duplicate", systemImage: "doc.on.doc")
+                        Text("Create a copy")
                     }
                     
-                    Button(action: { selectedOption = "Delete" }) {
+                    Button(role: .destructive, action: { selectedOption = "Delete" }) {
                         Label("Delete", systemImage: "trash")
+                        Text("Remove permanently")
                     }
                 } label: {
                     Label("Actions", systemImage: "ellipsis.circle")
@@ -56,6 +64,8 @@ struct MenusView: View {
             } footer: {
                 Text("Use Label to add SF Symbols to menu items for better visual communication.")
             }
+            
+            
             
             // Menu with sections and dividers.
             Section {
@@ -93,6 +103,8 @@ struct MenusView: View {
                 Text("Dividers help group related menu items logically.")
             }
             
+            
+            
             // Nested menus (submenus).
             Section {
                 Menu("File") {
@@ -127,6 +139,8 @@ struct MenusView: View {
                 Text("Menus can contain other menus for hierarchical organization.")
             }
             
+            
+            
             // Menu with destructive actions.
             Section {
                 Menu("More Options") {
@@ -153,6 +167,33 @@ struct MenusView: View {
             } footer: {
                 Text("Use the destructive role for actions that delete or remove content.")
             }
+            
+            
+            
+            // Menu with dismiss behavior disabled (iOS 16.4+).
+            Section {
+                Menu("Format") {
+                    Toggle("Bold", isOn: $bold)
+                    Toggle("Italic", isOn: $italic)
+                    Toggle("Underline", isOn: $underline)
+                }
+                .menuActionDismissBehavior(.disabled)
+                
+                VStack(alignment: .leading) {
+                    HStack {
+                        Text("Bold: \(bold ? "On" : "Off")")
+                        Text("Italic: \(italic ? "On" : "Off")")
+                        Text("Underline: \(underline ? "On" : "Off")")
+                    }
+                    .font(.caption)
+                }
+            } header: {
+                Text("Menu Dismiss Behavior")
+            } footer: {
+                Text("Keep a menu open after selecting an action. Perfect for menus with multiple selections.")
+            }
+            
+            
             
             // Context menu alternative.
             Section {

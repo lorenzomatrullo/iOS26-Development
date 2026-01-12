@@ -33,6 +33,7 @@ enum AppView: String, CaseIterable, Identifiable {
     
     // Polish & Enhancement
     case animationsAndTransitions = "20 - Animations & Transitions"
+    case searchable = "21 - Searchable"
 
     // Additional Concepts
     case forEach = "ForEach"
@@ -78,6 +79,7 @@ struct ViewPickerContainer: View {
                                     Text("18 - Positional Toolbars").tag(AppView.positionalToolbars)
                                     Text("19 - Toolbar Menu").tag(AppView.toolbarMenu)
                                     Text("20 - Animations & Transitions").tag(AppView.animationsAndTransitions)
+                                    Text("21 - Searchable").tag(AppView.searchable)
                                 }
 
                                 Divider()
@@ -143,6 +145,8 @@ struct ViewPickerContainer: View {
             MenusView()
         case .animationsAndTransitions:
             AnimationsAndTransitionsView()
+        case .searchable:
+            SearchableView()
         case .semanticToolbars:
             SemanticToolbarsView(onReturnToFirstLesson: returnToFirstLesson)
         case .positionalToolbars:
