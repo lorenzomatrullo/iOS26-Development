@@ -9,14 +9,11 @@ struct LiquidGlassNamespaceView: View {
                 HStack {
                     Group {
                         Image(systemName: "cloud.bolt.rain.fill")
-                            .font(.system(size: 36))
-                            .frame(width: 80, height: 80)
-                            .glassEffect()
                         Image(systemName: "sun.rain.fill")
-                            .font(.system(size: 36))
-                            .frame(width: 80, height: 80)
-                            .glassEffect()
                     }
+                    .font(.system(size: 36))
+                    .frame(width: 80, height: 80)
+                    .glassEffect()
                     .glassEffectUnion(id: 1, namespace: namespace)
                 }
                 

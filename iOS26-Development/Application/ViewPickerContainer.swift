@@ -35,13 +35,11 @@ enum AppView: String, CaseIterable, Identifiable {
     case animationsAndTransitions = "20 - Animations & Transitions"
     case searchable = "21 - Searchable"
 
-    // Additional Concepts
-    case forEach = "ForEach"
-
     // Liquid Glass (Advanced Demos)
     case liquidGlass = "Liquid Glass"
     case liquidGlassNamespace = "Liquid Glass Namespace"
     case liquidGlassTransition = "Liquid Glass Transition"
+    case liquidGlassBlend = "Liquid Glass Blend"
     
     var id: String { rawValue }
 }
@@ -84,18 +82,13 @@ struct ViewPickerContainer: View {
 
                                 Divider()
 
-                                Picker("Additional Concepts", selection: $selectedView) {
-                                    Text("ForEach").tag(AppView.forEach)
-                                }
-
-                                Divider()
-
                                 // Liquid Glass submenu
                                 Menu("Liquid Glass") {
                                     Picker("Select Liquid Glass Lesson", selection: $selectedView) {
                                         Text("Liquid Glass").tag(AppView.liquidGlass)
                                         Text("Liquid Glass Namespace").tag(AppView.liquidGlassNamespace)
                                         Text("Liquid Glass Transition").tag(AppView.liquidGlassTransition)
+                                        Text("Liquid Glass Blend").tag(AppView.liquidGlassBlend)
                                     }
                                 }
                             } label: {
@@ -159,14 +152,14 @@ struct ViewPickerContainer: View {
             GroupBoxView()
         case .buttons:
             ButtonsView()
-        case .forEach:
-            ForEachView()
         case .liquidGlass:
             LiquidGlassView()
         case .liquidGlassNamespace:
             LiquidGlassNamespaceView()
         case .liquidGlassTransition:
             LiquidGlassTransitionView()
+        case .liquidGlassBlend:
+            LiquidGlassBlendView()
         }
     }
 }
