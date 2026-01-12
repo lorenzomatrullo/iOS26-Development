@@ -7,6 +7,19 @@ struct ListsView: View {
     
     var body: some View {
         List {
+            Section {
+                Text("Item")
+                    .badge(5)
+                    .badgeProminence(.increased)
+                Text("Item")
+                    .badge(5)
+                Text("Item")
+                    .badge("New")
+                    .badgeProminence(.increased)
+                Text("Item")
+                    .badge("New")
+            }
+            
             ForEach(letters, id: \.self) { letter in
                 Section {
                     ForEach(1...5, id: \.self) { number in
