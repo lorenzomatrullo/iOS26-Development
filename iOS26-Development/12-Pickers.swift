@@ -1,13 +1,15 @@
 import SwiftUI
 
 // Pickers with different styles for selecting from a list of options.
-struct PickerStylesView: View {
+struct PickersView: View {
     @State private var menuSelection = "Option 1"
     @State private var segmentedSelection = "Small"
     @State private var wheelSelection = 1
     @State private var inlineSelection = "Red"
     @State private var navigationSelection = "iOS"
+    @State private var selectedTheme = "System"
     
+    let themes = ["System", "Light", "Dark"]
     let menuOptions = ["Option 1", "Option 2", "Option 3", "Option 4"]
     let sizeOptions = ["Small", "Medium", "Large"]
     let colorOptions = ["Red", "Green", "Blue", "Yellow", "Purple"]
@@ -83,12 +85,28 @@ struct PickerStylesView: View {
             } footer: {
                 Text("Navigation link pickers push to a new screen to show options.")
             }
+            
+            Section {
+                Menu("Theme") {
+                    Picker("Pick a Theme", selection: $selectedTheme) {
+                        ForEach(themes, id: \.self) { theme in
+                            Text(theme)
+                        }
+                    }
+                    .pickerStyle(.palette)
+                }
+            } header: {
+                Text("Palette Style")
+            } footer: {
+                Text("Palette pickers in a Menu show options with visual indicators.")
+            }
+            
         }
         .listSectionSpacing(20)
-        .navigationTitle("11 - Picker Styles")
+        .navigationTitle("11 - Pickers")
     }
 }
 
 #Preview {
-    PickerStylesView()
+    PickersView()
 }

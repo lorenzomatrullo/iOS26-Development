@@ -8,7 +8,7 @@ struct AnimationsAndTransitionsView: View {
     var body: some View {
         VStack(spacing: 24) {
             Button(isVisible ? "Hide box" : "Show box") {
-                withAnimation(.easeInOut(duration: 0.4)) {
+                withAnimation(.easeInOut) {
                     isVisible.toggle()
                 }
             }
