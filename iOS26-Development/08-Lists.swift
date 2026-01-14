@@ -20,6 +20,43 @@ struct ListsView: View {
                     .badge("New")
             }
             
+            
+            // NavigationLink indicator visibility control (iOS 17.0+)
+            Section {
+                NavigationLink("Photos") {
+                    Text("Photos Detail")
+                }
+                .navigationLinkIndicatorVisibility(.visible)
+                
+                NavigationLink("Movies") {
+                    Text("Movies Detail")
+                }
+                .navigationLinkIndicatorVisibility(.visible)
+            } header: {
+                Text("With Disclosure Indicator")
+            } footer: {
+                Text("navigationLinkIndicatorVisibility(.visible) shows the chevron.")
+            }
+            
+            
+            Section {
+                NavigationLink("Photos") {
+                    Text("Photos Detail")
+                }
+                .navigationLinkIndicatorVisibility(.hidden)
+                
+                NavigationLink("Movies") {
+                    Text("Movies Detail")
+                }
+                .navigationLinkIndicatorVisibility(.hidden)
+            } header: {
+                Text("Without Disclosure Indicator")
+            } footer: {
+                Text("navigationLinkIndicatorVisibility(.hidden) hides the chevron. Perfect for cleaner lists or when you want full control over row styling.")
+            }
+            
+            
+            
             ForEach(letters, id: \.self) { letter in
                 Section {
                     ForEach(1...5, id: \.self) { number in
@@ -31,6 +68,7 @@ struct ListsView: View {
                 .sectionIndexLabel(letter)
             }
         }
+        //.environment(\.defaultMinListRowHeight, 150) // make your list rows taller by default
         .navigationTitle("08 - Lists")
     }
 }

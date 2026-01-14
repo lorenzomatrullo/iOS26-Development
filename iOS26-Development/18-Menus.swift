@@ -200,17 +200,24 @@ struct MenusView: View {
                 Text("Long press me")
                     .foregroundStyle(.blue)
                     .contextMenu {
-                        Button("Copy") {
-                            selectedOption = "Copy"
+                        Button("Reply", systemImage: "arrow.turn.up.left") {
+                            selectedOption = "Reply"
                         }
-                        
-                        Button("Paste") {
-                            selectedOption = "Paste"
+                        Button("Mark as Read", systemImage: "envelope.open") {
+                            selectedOption = "Mark as Read"
                         }
-                        
-                        Button("Delete", role: .destructive) {
+                        Button("Delete", systemImage: "trash", role: .destructive) {
                             selectedOption = "Delete"
                         }
+                    } preview: {
+                        VStack(alignment: .leading, spacing: 10) {
+                            Text("Your invoice for December")
+                                .font(.headline)
+                            Text("Hi there,\nHere's your invoice for this month.")
+                                .font(.subheadline)
+                                .foregroundStyle(.secondary)
+                        }
+                        .padding(20)
                     }
                 
                 Text("Selected: \(selectedOption)")

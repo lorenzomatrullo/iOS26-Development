@@ -19,22 +19,30 @@ enum AppView: String, CaseIterable, Identifiable {
     // Input Controls
     case sliders = "11 - Sliders"
     case pickers = "12 - Picker Styles"
+    case submitLabel = "13 - Submit Label"
     
     // Navigation & Structure
-    case navigationStack = "13 - Navigation Stack"
-    case sheets = "14 - Sheets"
-    case tabView = "15 - Tab View"
+    case navigationStack = "14 - Navigation Stack"
+    case sheets = "15 - Sheets"
+    case tabView = "16 - Tab View"
+    case tabViewPages = "17 - Tab View Pages"
     
     // Advanced Interactions
-    case menus = "16 - Menus"
-    case semanticToolbars = "17 - Semantic Toolbars"
-    case positionalToolbars = "18 - Positional Toolbars"
-    case toolbarMenu = "19 - Toolbar Menu"
+    case menus = "18 - Menus"
+    case semanticToolbars = "19 - Semantic Toolbars"
+    case positionalToolbars = "20 - Positional Toolbars"
+    case toolbarMenu = "21 - Toolbar Menu"
     
     // Polish & Enhancement
-    case animationsAndTransitions = "20 - Animations & Transitions"
-    case searchable = "21 - Searchable"
-
+    case animationsAndTransitions = "22 - Animations & Transitions"
+    case searchable = "23 - Searchable"
+    case loadingProgress = "24 - Loading Progress"
+    case notifications = "25 - Notifications"
+    case hapticFeedbacks = "26 - Haptic Feedbacks"
+    case requestReview = "27 - Request Review"
+    case contentUnavailable = "28 - Content Unavailable"
+    case webView = "29 - WebView"
+    
     // Liquid Glass (Advanced Demos)
     case liquidGlass = "Liquid Glass"
     case liquidGlassNamespace = "Liquid Glass Namespace"
@@ -69,19 +77,27 @@ struct ViewPickerContainer: View {
                                     Text("10 - GroupBox").tag(AppView.groupBox)
                                     Text("11 - Sliders").tag(AppView.sliders)
                                     Text("12 - Pickers").tag(AppView.pickers)
-                                    Text("13 - Navigation Stack").tag(AppView.navigationStack)
-                                    Text("14 - Sheets").tag(AppView.sheets)
-                                    Text("15 - Tab View").tag(AppView.tabView)
-                                    Text("16 - Menus").tag(AppView.menus)
-                                    Text("17 - Semantic Toolbars").tag(AppView.semanticToolbars)
-                                    Text("18 - Positional Toolbars").tag(AppView.positionalToolbars)
-                                    Text("19 - Toolbar Menu").tag(AppView.toolbarMenu)
-                                    Text("20 - Animations & Transitions").tag(AppView.animationsAndTransitions)
-                                    Text("21 - Searchable").tag(AppView.searchable)
+                                    Text("13 - Keyboard Submit Label").tag(AppView.submitLabel)
+                                    Text("14 - Navigation Stack").tag(AppView.navigationStack)
+                                    Text("15 - Sheets").tag(AppView.sheets)
+                                    Text("16 - Tab View").tag(AppView.tabView)
+                                    Text("17 - Tab View Pages").tag(AppView.tabViewPages)
+                                    Text("18 - Menus").tag(AppView.menus)
+                                    Text("19 - Semantic Toolbars").tag(AppView.semanticToolbars)
+                                    Text("20 - Positional Toolbars").tag(AppView.positionalToolbars)
+                                    Text("21 - Toolbar Menu").tag(AppView.toolbarMenu)
+                                    Text("22 - Animations & Transitions").tag(AppView.animationsAndTransitions)
+                                    Text("23 - Searchable").tag(AppView.searchable)
+                                    Text("24 - Loading Progress").tag(AppView.loadingProgress)
+                                    Text("25 - Notifications").tag(AppView.notifications)
+                                    Text("26 - Haptic Feedbacks").tag(AppView.hapticFeedbacks)
+                                    Text("27 - Request Review").tag(AppView.requestReview)
+                                    Text("28 - Content Unavailable").tag(AppView.contentUnavailable)
+                                    Text("29 - WebView").tag(AppView.webView)
                                 }
-
+                                
                                 Divider()
-
+                                
                                 // Liquid Glass submenu
                                 Menu("Liquid Glass") {
                                     Picker("Select Liquid Glass Lesson", selection: $selectedView) {
@@ -128,18 +144,34 @@ struct ViewPickerContainer: View {
             NavigationStackView()
         case .tabView:
             TabBarView()
+        case .tabViewPages:
+            TabViewPages()
         case .formsAndSections:
             FormsAndSectionsView()
         case .sliders:
             SlidersView()
         case .pickers:
             PickersView()
+        case .submitLabel:
+            KeyboardSubmitLabelView()
         case .menus:
             MenusView()
         case .animationsAndTransitions:
             AnimationsAndTransitionsView()
         case .searchable:
             SearchableView()
+        case .loadingProgress:
+            LoadingProgressView()
+        case .notifications:
+            UserNotificationsView()
+        case .hapticFeedbacks:
+            HapticFeedbacksView()
+        case .requestReview:
+            RequestReviewView()
+        case .contentUnavailable:
+            ContentUnavailableExampleView()
+        case .webView:
+            WebContentView()
         case .semanticToolbars:
             SemanticToolbarsView(onReturnToFirstLesson: returnToFirstLesson)
         case .positionalToolbars:

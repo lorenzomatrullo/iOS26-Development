@@ -23,6 +23,17 @@ struct LiquidGlassView: View {
                     // Do something like a button
                 }
             
+            //
+            Text("Hello World")
+                .font(.largeTitle)
+                .padding()
+                //.glassEffect(.clear, in: .rect(cornerRadius: 10))
+                //.glassEffect(.clear)
+                .glassEffect(.clear.interactive().tint(.mint.opacity(0.3))) // acts like a button
+                .onTapGesture {
+                    // Do something like a button
+                }
+            
             Spacer()
                 .frame(height: 40) // Fixed height spacer
             
