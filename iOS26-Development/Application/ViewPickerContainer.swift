@@ -37,12 +37,14 @@ enum AppView: String, CaseIterable, Identifiable {
     case animationsAndTransitions = "22 - Animations & Transitions"
     case searchable = "23 - Searchable"
     case loadingProgress = "24 - Loading Progress"
-    case notifications = "25 - Notifications"
-    case hapticFeedbacks = "26 - Haptic Feedbacks"
-    case requestReview = "27 - Request Review"
-    case contentUnavailable = "28 - Content Unavailable"
-    case webView = "29 - WebView"
-    
+    case hapticFeedbacks = "25 - Haptic Feedbacks"
+    case contentUnavailable = "26 - Content Unavailable"
+
+    // Other Frameworks (non-SwiftUI imports)
+    case notifications = "Notifications"
+    case requestReview = "Request Review"
+    case webView = "WebView"
+
     // Liquid Glass (Advanced Demos)
     case liquidGlass = "Liquid Glass"
     case liquidGlassNamespace = "Liquid Glass Namespace"
@@ -89,15 +91,21 @@ struct ViewPickerContainer: View {
                                     Text("22 - Animations & Transitions").tag(AppView.animationsAndTransitions)
                                     Text("23 - Searchable").tag(AppView.searchable)
                                     Text("24 - Loading Progress").tag(AppView.loadingProgress)
-                                    Text("25 - Notifications").tag(AppView.notifications)
-                                    Text("26 - Haptic Feedbacks").tag(AppView.hapticFeedbacks)
-                                    Text("27 - Request Review").tag(AppView.requestReview)
-                                    Text("28 - Content Unavailable").tag(AppView.contentUnavailable)
-                                    Text("29 - WebView").tag(AppView.webView)
+                                    Text("25 - Haptic Feedbacks").tag(AppView.hapticFeedbacks)
+                                    Text("26 - Content Unavailable").tag(AppView.contentUnavailable)
                                 }
-                                
+
                                 Divider()
-                                
+
+                                // Other Frameworks submenu
+                                Menu("Other Frameworks") {
+                                    Picker("Select Other Framework Lesson", selection: $selectedView) {
+                                        Text("Notifications").tag(AppView.notifications)
+                                        Text("Request Review").tag(AppView.requestReview)
+                                        Text("WebView").tag(AppView.webView)
+                                    }
+                                }
+
                                 // Liquid Glass submenu
                                 Menu("Liquid Glass") {
                                     Picker("Select Liquid Glass Lesson", selection: $selectedView) {
