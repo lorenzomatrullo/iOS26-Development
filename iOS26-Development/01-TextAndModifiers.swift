@@ -21,6 +21,10 @@ struct TextAndModifiersView: View {
                 .multilineTextAlignment(.center)
                 .lineLimit(2)
                 .padding()
+            
+            Text("TWh898_2jduDA")
+                .privacySensitive(true)
+                .redacted(reason: .privacy)
         }
         .navigationTitle("01 - Text & Modifiers")
     }
