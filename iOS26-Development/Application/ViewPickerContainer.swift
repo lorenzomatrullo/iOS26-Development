@@ -20,27 +20,28 @@ enum AppView: String, CaseIterable, Identifiable {
     case sliders = "11 - Sliders"
     case pickers = "12 - Picker Styles"
     case submitLabel = "13 - Submit Label"
-    case pasteButton = "14 - Paste Button"
-    case shareLink = "15 - Share Link"
+    case keyboardTypes = "14 - Keyboard Types"
+    case pasteButton = "15 - Paste Button"
+    case shareLink = "16 - Share Link"
 
     // Navigation & Structure
-    case navigationStack = "16 - Navigation Stack"
-    case sheets = "17 - Sheets"
-    case tabView = "18 - Tab View"
-    case tabViewPages = "19 - Tab View Pages"
+    case navigationStack = "17 - Navigation Stack"
+    case sheets = "18 - Sheets"
+    case tabView = "19 - Tab View"
+    case tabViewPages = "20 - Tab View Pages"
 
     // Advanced Interactions
-    case menus = "20 - Menus"
-    case semanticToolbars = "21 - Semantic Toolbars"
-    case positionalToolbars = "22 - Positional Toolbars"
-    case toolbarMenu = "23 - Toolbar Menu"
+    case menus = "21 - Menus"
+    case semanticToolbars = "22 - Semantic Toolbars"
+    case positionalToolbars = "23 - Positional Toolbars"
+    case toolbarMenu = "24 - Toolbar Menu"
 
     // Polish & Enhancement
-    case animationsAndTransitions = "24 - Animations & Transitions"
-    case searchable = "25 - Searchable"
-    case loadingProgress = "26 - Loading Progress"
-    case hapticFeedbacks = "27 - Haptic Feedbacks"
-    case contentUnavailable = "28 - Content Unavailable"
+    case animationsAndTransitions = "25 - Animations & Transitions"
+    case searchable = "26 - Searchable"
+    case loadingProgress = "27 - Loading Progress"
+    case hapticFeedbacks = "28 - Haptic Feedbacks"
+    case contentUnavailable = "29 - Content Unavailable"
 
     // Other Frameworks (non-SwiftUI imports)
     case notifications = "Notifications"
@@ -82,21 +83,22 @@ struct ViewPickerContainer: View {
                                     Text("11 - Sliders").tag(AppView.sliders)
                                     Text("12 - Pickers").tag(AppView.pickers)
                                     Text("13 - Keyboard Submit Label").tag(AppView.submitLabel)
-                                    Text("14 - Paste Button").tag(AppView.pasteButton)
-                                    Text("15 - Share Link").tag(AppView.shareLink)
-                                    Text("16 - Navigation Stack").tag(AppView.navigationStack)
-                                    Text("17 - Sheets").tag(AppView.sheets)
-                                    Text("18 - Tab View").tag(AppView.tabView)
-                                    Text("19 - Tab View Pages").tag(AppView.tabViewPages)
-                                    Text("20 - Menus").tag(AppView.menus)
-                                    Text("21 - Semantic Toolbars").tag(AppView.semanticToolbars)
-                                    Text("22 - Positional Toolbars").tag(AppView.positionalToolbars)
-                                    Text("23 - Toolbar Menu").tag(AppView.toolbarMenu)
-                                    Text("24 - Animations & Transitions").tag(AppView.animationsAndTransitions)
-                                    Text("25 - Searchable").tag(AppView.searchable)
-                                    Text("26 - Loading Progress").tag(AppView.loadingProgress)
-                                    Text("27 - Haptic Feedbacks").tag(AppView.hapticFeedbacks)
-                                    Text("28 - Content Unavailable").tag(AppView.contentUnavailable)
+                                    Text("14 - Keyboard Types").tag(AppView.keyboardTypes)
+                                    Text("15 - Paste Button").tag(AppView.pasteButton)
+                                    Text("16 - Share Link").tag(AppView.shareLink)
+                                    Text("17 - Navigation Stack").tag(AppView.navigationStack)
+                                    Text("18 - Sheets").tag(AppView.sheets)
+                                    Text("19 - Tab View").tag(AppView.tabView)
+                                    Text("20 - Tab View Pages").tag(AppView.tabViewPages)
+                                    Text("21 - Menus").tag(AppView.menus)
+                                    Text("22 - Semantic Toolbars").tag(AppView.semanticToolbars)
+                                    Text("23 - Positional Toolbars").tag(AppView.positionalToolbars)
+                                    Text("24 - Toolbar Menu").tag(AppView.toolbarMenu)
+                                    Text("25 - Animations & Transitions").tag(AppView.animationsAndTransitions)
+                                    Text("26 - Searchable").tag(AppView.searchable)
+                                    Text("27 - Loading Progress").tag(AppView.loadingProgress)
+                                    Text("28 - Haptic Feedbacks").tag(AppView.hapticFeedbacks)
+                                    Text("29 - Content Unavailable").tag(AppView.contentUnavailable)
                                 }
 
                                 Divider()
@@ -166,6 +168,8 @@ struct ViewPickerContainer: View {
             PickersView()
         case .submitLabel:
             KeyboardSubmitLabelView()
+        case .keyboardTypes:
+            KeyboardTypesView()
         case .pasteButton:
             PasteButtonView()
         case .shareLink:
