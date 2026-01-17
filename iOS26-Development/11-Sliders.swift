@@ -23,6 +23,8 @@ struct SlidersView: View {
                 Text("A simple slider with a custom range from 0 to 100.")
             }
             
+            
+            
             // Slider with custom range and labels.
             Section {
                 VStack(alignment: .leading, spacing: 12) {
@@ -43,6 +45,8 @@ struct SlidersView: View {
                 Text("Sliders can have labels at both ends for context.")
             }
             
+            
+            
             // Slider with step increments.
             Section {
                 VStack(alignment: .leading, spacing: 12) {
@@ -60,6 +64,8 @@ struct SlidersView: View {
             } footer: {
                 Text("Use the step parameter to snap to discrete values and the ticks parameter to show visual indicators at specific positions.")
             }
+            
+            
             
             // Slider with SF Symbol labels.
             Section {
@@ -82,6 +88,9 @@ struct SlidersView: View {
             } footer: {
                 Text("SF Symbols work great as visual indicators for slider ranges.")
             }
+            .tint(.red) // change the color of the slider
+            
+            
             
             // Visual feedback example.
             Section {
