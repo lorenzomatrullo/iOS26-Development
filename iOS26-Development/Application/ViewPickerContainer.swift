@@ -19,22 +19,24 @@ enum AppView: String, CaseIterable, Identifiable {
     // Input Controls
     case sliders = "11 - Sliders"
     case pickers = "12 - Picker Styles"
-    case submitLabel = "13 - Submit Label"
-    case keyboardTypes = "14 - Keyboard Types"
-    case pasteButton = "15 - Paste Button"
-    case shareLink = "16 - Share Link"
 
     // Navigation & Structure
-    case navigationStack = "17 - Navigation Stack"
-    case sheets = "18 - Sheets"
-    case tabView = "19 - Tab View"
-    case tabViewPages = "20 - Tab View Pages"
+    case navigationStack = "13 - Navigation Stack"
+    case sheets = "14 - Sheets"
+    case tabView = "15 - Tab View"
+    case tabViewPages = "16 - Tab View Pages"
 
-    // Advanced Interactions
-    case menus = "21 - Menus"
-    case semanticToolbars = "22 - Semantic Toolbars"
-    case positionalToolbars = "23 - Positional Toolbars"
-    case toolbarMenu = "24 - Toolbar Menu"
+    // Menus & Toolbars
+    case menus = "17 - Menus"
+    case semanticToolbars = "18 - Semantic Toolbars"
+    case positionalToolbars = "19 - Positional Toolbars"
+    case toolbarMenu = "20 - Toolbar Menu"
+
+    // Additional Input Controls
+    case submitLabel = "21 - Keyboard Submit Label"
+    case keyboardTypes = "22 - Keyboard Types"
+    case pasteButton = "23 - Paste Button"
+    case shareLink = "24 - Share Link"
 
     // Polish & Enhancement
     case animationsAndTransitions = "25 - Animations & Transitions"
@@ -82,18 +84,18 @@ struct ViewPickerContainer: View {
                                     Text("10 - GroupBox").tag(AppView.groupBox)
                                     Text("11 - Sliders").tag(AppView.sliders)
                                     Text("12 - Pickers").tag(AppView.pickers)
-                                    Text("13 - Keyboard Submit Label").tag(AppView.submitLabel)
-                                    Text("14 - Keyboard Types").tag(AppView.keyboardTypes)
-                                    Text("15 - Paste Button").tag(AppView.pasteButton)
-                                    Text("16 - Share Link").tag(AppView.shareLink)
-                                    Text("17 - Navigation Stack").tag(AppView.navigationStack)
-                                    Text("18 - Sheets").tag(AppView.sheets)
-                                    Text("19 - Tab View").tag(AppView.tabView)
-                                    Text("20 - Tab View Pages").tag(AppView.tabViewPages)
-                                    Text("21 - Menus").tag(AppView.menus)
-                                    Text("22 - Semantic Toolbars").tag(AppView.semanticToolbars)
-                                    Text("23 - Positional Toolbars").tag(AppView.positionalToolbars)
-                                    Text("24 - Toolbar Menu").tag(AppView.toolbarMenu)
+                                    Text("13 - Navigation Stack").tag(AppView.navigationStack)
+                                    Text("14 - Sheets").tag(AppView.sheets)
+                                    Text("15 - Tab View").tag(AppView.tabView)
+                                    Text("16 - Tab View Pages").tag(AppView.tabViewPages)
+                                    Text("17 - Menus").tag(AppView.menus)
+                                    Text("18 - Semantic Toolbars").tag(AppView.semanticToolbars)
+                                    Text("19 - Positional Toolbars").tag(AppView.positionalToolbars)
+                                    Text("20 - Toolbar Menu").tag(AppView.toolbarMenu)
+                                    Text("21 - Keyboard Submit Label").tag(AppView.submitLabel)
+                                    Text("22 - Keyboard Types").tag(AppView.keyboardTypes)
+                                    Text("23 - Paste Button").tag(AppView.pasteButton)
+                                    Text("24 - Share Link").tag(AppView.shareLink)
                                     Text("25 - Animations & Transitions").tag(AppView.animationsAndTransitions)
                                     Text("26 - Searchable").tag(AppView.searchable)
                                     Text("27 - Loading Progress").tag(AppView.loadingProgress)

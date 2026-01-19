@@ -49,14 +49,23 @@ For more details on Swift development with VS Code, see the official docs:
   - `13-NavigationStack.swift`: NavigationStack and NavigationLink.
   - `14-Sheets.swift`: Modal presentations with sheets.
   - `15-TabView.swift`: TabView for basic app structure with badge customization.
-  - `16-Menus.swift`: Menus, context menus, menu organization, and dismiss behavior.
-  - `17-SemanticToolbars.swift`: Semantic toolbar placements for platform-appropriate positioning.
-  - `18-PositionalToolbars.swift`: Positional toolbar placements with grouping and spacers.
-  - `19-ToolbarMenu.swift`: Menu-based toolbar items.
-  - `20-AnimationsAndTransitions.swift`: Implicit animations and transitions.
-  - `21-Searchable.swift`: Search functionality with iOS 26's new bottom placement and navigation bar drawer option.
+  - `16-TabViewPages.swift`: TabView with page-style navigation.
+  - `17-Menus.swift`: Menus, context menus, menu organization, and dismiss behavior.
+  - `18-SemanticToolbars.swift`: Semantic toolbar placements for platform-appropriate positioning.
+  - `19-PositionalToolbars.swift`: Positional toolbar placements with grouping and spacers.
+  - `20-ToolbarMenu.swift`: Menu-based toolbar items.
+  - `21-KeyboardSubmitLabel.swift`: Customize the keyboard return key label.
+  - `22-KeyboardTypes.swift`: Different keyboard input types.
+  - `23-PasteButton.swift`: Paste functionality for text fields.
+  - `24-ShareLink.swift`: Share content with ShareLink.
+  - `25-AnimationsAndTransitions.swift`: Implicit animations and transitions.
+  - `26-Searchable.swift`: Search functionality with iOS 26's new bottom placement.
+  - `27-LoadingProgress.swift`: Progress indicators and loading states.
+  - `28-HapticFeedbacks.swift`: Haptic feedback and vibration effects.
+  - `29-ContentUnavailable.swift`: Empty state and content unavailable views.
   - `ForEach.swift`: Deep dive into ForEach and dynamic lists.
-  - `LiquidGlass.swift`, `LiquidGlassNamespace.swift`, `LiquidGlassTransition.swift`: Bonus lessons on advanced UI effects.
+  - `LiquidGlass.swift`, `LiquidGlassNamespace.swift`, `LiquidGlassTransition.swift`, `LiquidGlassBlend.swift`: Bonus lessons on Liquid Glass effects.
+  - `Notifications.swift`, `RequestReview.swift`, `WebView.swift`: Other framework examples.
 - **`iOS26-Development.xcodeproj`**: Xcode project.
 
 Each numbered file is independent and has its own `#Preview`, so you can open and run any lesson without wiring it into the app entry point.
@@ -90,7 +99,7 @@ Follow the lessons in order for the best learning experience. Each lesson builds
 - **[07 – Toggles](iOS26-Development/07-Toggles.swift)**
   Interactive toggle switches and state management with @State.
 
-#### Part 2: Basic Interaction & Organization
+#### Part 2: Data Display & Organization
 
 - **[08 – Lists](iOS26-Development/08-Lists.swift)**
   Display dynamic data with List views and simple row layouts.
@@ -101,7 +110,7 @@ Follow the lessons in order for the best learning experience. Each lesson builds
 - **[10 – GroupBox](iOS26-Development/10-GroupBox.swift)**
   Group related content with labeled containers.
 
-#### Part 3: Input Controls
+#### Part 3: Basic Input Controls
 
 - **[11 – Sliders](iOS26-Development/11-Sliders.swift)**
   Work with slider controls for numeric input: ranges, steps, labels, tick marks, and visual feedback.
@@ -120,47 +129,81 @@ Follow the lessons in order for the best learning experience. Each lesson builds
 - **[15 – Tab View](iOS26-Development/15-TabView.swift)**
   Structure your app with TabView for multiple sections. Includes UIKit badge color customization.
 
-#### Part 5: Advanced Interactions
+- **[16 – Tab View Pages](iOS26-Development/16-TabViewPages.swift)**
+  Use TabView with page-style navigation for onboarding flows and image galleries.
 
-- **[16 – Menus](iOS26-Development/16-Menus.swift)**
+#### Part 5: Menus & Toolbars
+
+- **[17 – Menus](iOS26-Development/17-Menus.swift)**
   Present contextual actions with Menus, submenus, dividers, context menus, and iOS 16.4+ dismiss behavior.
 
-- **[17 – Semantic Toolbars](iOS26-Development/17-SemanticToolbars.swift)**
+- **[18 – Semantic Toolbars](iOS26-Development/18-SemanticToolbars.swift)**
   Use semantic placement modifiers to position toolbar items appropriately across platforms.
 
-- **[18 – Positional Toolbars](iOS26-Development/18-PositionalToolbars.swift)**
+- **[19 – Positional Toolbars](iOS26-Development/19-PositionalToolbars.swift)**
   Control exact toolbar item placement with positional modifiers, grouping, and spacers.
 
-- **[19 – Toolbar Menu](iOS26-Development/19-ToolbarMenu.swift)**
+- **[20 – Toolbar Menu](iOS26-Development/20-ToolbarMenu.swift)**
   Create menu-based toolbar items for compact action organization.
 
-#### Part 6: Polish & Enhancement
+#### Part 6: Additional Input Controls
 
-- **[20 – Animations and Transitions](iOS26-Development/20-AnimationsAndTransitions.swift)**
+- **[21 – Keyboard Submit Label](iOS26-Development/21-KeyboardSubmitLabel.swift)**
+  Customize the keyboard return key label for different actions (Search, Done, Send, etc.).
+
+- **[22 – Keyboard Types](iOS26-Development/22-KeyboardTypes.swift)**
+  Configure different keyboard types for various input scenarios (email, phone, URL, etc.).
+
+- **[23 – Paste Button](iOS26-Development/23-PasteButton.swift)**
+  Add system paste functionality with proper permissions handling.
+
+- **[24 – Share Link](iOS26-Development/24-ShareLink.swift)**
+  Share content using the native share sheet with ShareLink.
+
+#### Part 7: Polish & Enhancement
+
+- **[25 – Animations and Transitions](iOS26-Development/25-AnimationsAndTransitions.swift)**
   Add polish with implicit animations and smooth view transitions.
 
-- **[21 – Searchable](iOS26-Development/21-Searchable.swift)**
-  Add search functionality with the `.searchable()` modifier. Learn about iOS 26's new default bottom placement and how to move it back to the navigation bar drawer.
+- **[26 – Searchable](iOS26-Development/26-Searchable.swift)**
+  Add search functionality with the `.searchable()` modifier. Learn about iOS 26's new default bottom placement.
+
+- **[27 – Loading Progress](iOS26-Development/27-LoadingProgress.swift)**
+  Display progress indicators and loading states with ProgressView.
+
+- **[28 – Haptic Feedbacks](iOS26-Development/28-HapticFeedbacks.swift)**
+  Add tactile feedback with haptics and vibration effects.
+
+- **[29 – Content Unavailable](iOS26-Development/29-ContentUnavailable.swift)**
+  Handle empty states gracefully with ContentUnavailableView.
 
 #### Additional Concepts
 
 - **[ForEach](iOS26-Development/ForEach.swift)**
   Deep dive into ForEach for creating dynamic lists and understanding iteration in SwiftUI.
 
-#### Bonus: Advanced Techniques
+#### Bonus: Liquid Glass Effects
 
-The Liquid Glass lessons (accessible via submenu in the app) demonstrate advanced techniques for creating modern, translucent UI effects:
+The Liquid Glass lessons (accessible via submenu in the app) demonstrate iOS 26's new translucent UI effects:
 - **[Liquid Glass](iOS26-Development/LiquidGlass.swift)**: Basic translucent background effects
 - **[Liquid Glass Namespace](iOS26-Development/LiquidGlassNamespace.swift)**: Namespace-based animations
 - **[Liquid Glass Transition](iOS26-Development/LiquidGlassTransition.swift)**: Advanced transition animations
+- **[Liquid Glass Blend](iOS26-Development/LiquidGlassBlend.swift)**: Blend mode effects
 
-**Note**: Set `UIDesignRequiresCompatibility` to `YES` in Info.plist to fall back to classic UI, or `NO` to support the new Liquid Glass design (iOS 18+).
+#### Bonus: Other Frameworks
+
+These lessons cover non-SwiftUI frameworks you'll commonly use:
+- **[Notifications](iOS26-Development/Notifications.swift)**: User notification handling with UserNotifications framework
+- **[Request Review](iOS26-Development/RequestReview.swift)**: App Store review requests with StoreKit
+- **[WebView](iOS26-Development/WebView.swift)**: Web content display with WKWebView
+
+**Note**: Set `UIDesignRequiresCompatibility` to `YES` in Info.plist to fall back to classic UI, or `NO` to support the new Liquid Glass design (iOS 26+).
 
 ---
 
 ### How to Work Through the Repo
 
-**This repository is designed as a progressive course.** Follow the lessons in order from 01 to 21 for the best learning experience.
+**This repository is designed as a progressive course.** Follow the lessons in order from 01 to 29 for the best learning experience.
 
 #### For Beginners
 
@@ -179,10 +222,10 @@ The Liquid Glass lessons (accessible via submenu in the app) demonstrate advance
 #### For Reference
 
 - **Quick topic lookup**
-  Use the numbered filenames as anchors. Need a reminder on Menus? Jump to `16-Menus.swift`.
+  Use the numbered filenames as anchors. Need a reminder on Menus? Jump to `17-Menus.swift`.
 
 - **Extending the course**
-  Add new topics by creating files like `22-YourTopic.swift`. Keep each file focused on one concept.
+  Add new topics by creating files like `30-YourTopic.swift`. Keep each file focused on one concept.
 
 - **Using Xcode and VS Code together**
   Use Xcode to run the iOS app and previews. Use VS Code as a lightweight editor for browsing code and small Swift experiments with Code Runner.
