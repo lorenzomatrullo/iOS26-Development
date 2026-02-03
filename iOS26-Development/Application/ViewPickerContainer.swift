@@ -52,6 +52,7 @@ enum AppView: String, CaseIterable, Identifiable {
 
     // Liquid Glass (Advanced Demos)
     case liquidGlass = "Liquid Glass"
+    case liquidGlassButtons = "Liquid Glass Buttons"
     case liquidGlassNamespace = "Liquid Glass Namespace"
     case liquidGlassTransition = "Liquid Glass Transition"
     case liquidGlassBlend = "Liquid Glass Blend"
@@ -118,6 +119,7 @@ struct ViewPickerContainer: View {
                                 Menu("Liquid Glass") {
                                     Picker("Select Liquid Glass Lesson", selection: $selectedView) {
                                         Text("Liquid Glass").tag(AppView.liquidGlass)
+                                        Text("Liquid Glass Buttons").tag(AppView.liquidGlassButtons)
                                         Text("Liquid Glass Namespace").tag(AppView.liquidGlassNamespace)
                                         Text("Liquid Glass Transition").tag(AppView.liquidGlassTransition)
                                         Text("Liquid Glass Blend").tag(AppView.liquidGlassBlend)
@@ -208,6 +210,8 @@ struct ViewPickerContainer: View {
             ButtonsView()
         case .liquidGlass:
             LiquidGlassView()
+        case .liquidGlassButtons:
+            LiquidGlassButtons {}
         case .liquidGlassNamespace:
             LiquidGlassNamespaceView()
         case .liquidGlassTransition:
