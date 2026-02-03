@@ -6,9 +6,12 @@ struct LiquidGlassView: View {
             Text("Hello World")
                 .font(.largeTitle)
                 .padding()
-                //.glassEffect(in: .rect(cornerRadius: 10))
-                //.glassEffect()
-                .glassEffect(.regular.interactive()) // acts like a button
+                .glassEffect()
+            
+            Text("Hello World")
+                .font(.largeTitle)
+                .padding()
+                .glassEffect(.regular.interactive(), in: .rect(cornerRadius: 18)) // acts like a button
                 .onTapGesture {
                     // Do something like a button
                 }
@@ -16,19 +19,19 @@ struct LiquidGlassView: View {
             Text("Hello World")
                 .font(.largeTitle)
                 .padding()
-                //.glassEffect(.clear, in: .rect(cornerRadius: 10))
-                //.glassEffect(.clear)
-                .glassEffect(.clear.interactive()) // acts like a button
+                .glassEffect(.clear)
+            
+            Text("Hello World")
+                .font(.largeTitle)
+                .padding()
+                .glassEffect(.clear.interactive(), in: .rect(cornerRadius: 18)) // acts like a button
                 .onTapGesture {
                     // Do something like a button
                 }
             
-            //
             Text("Hello World")
                 .font(.largeTitle)
                 .padding()
-                //.glassEffect(.clear, in: .rect(cornerRadius: 10))
-                //.glassEffect(.clear)
                 .glassEffect(.clear.interactive().tint(.mint.opacity(0.3))) // acts like a button
                 .onTapGesture {
                     // Do something like a button
