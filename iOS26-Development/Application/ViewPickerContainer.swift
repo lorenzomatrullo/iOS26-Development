@@ -1,8 +1,6 @@
 import SwiftUI
 
-// Enum defining all available lesson views in the app.
 enum AppView: String, CaseIterable, Identifiable {
-    // Foundation - Basic UI Building Blocks
     case textAndModifiers = "01 - Text & Modifiers"
     case stacksAndSpacing = "02 - Stacks & Spacing"
     case imagesAndSymbols = "03 - Images & SF Symbols"
@@ -10,119 +8,100 @@ enum AppView: String, CaseIterable, Identifiable {
     case scrollView = "05 - ScrollView"
     case buttons = "06 - Button Styles"
     case stateAndButtons = "07 - Toggles"
-    
-    // Basic Interaction & Organization
+
     case lists = "08 - Lists"
     case formsAndSections = "09 - Forms & Sections"
     case groupBox = "10 - GroupBox"
-    
-    // Input Controls
+    case forEachView = "ForEach"
+
     case sliders = "11 - Sliders"
     case pickers = "12 - Picker Styles"
-
-    // Navigation & Structure
-    case navigationStack = "13 - Navigation Stack"
-    case sheets = "14 - Sheets"
-    case tabView = "15 - Tab View"
-    case tabViewPages = "16 - Tab View Pages"
-
-    // Menus & Toolbars
-    case menus = "17 - Menus"
-    case semanticToolbars = "18 - Semantic Toolbars"
-    case positionalToolbars = "19 - Positional Toolbars"
-    case toolbarMenu = "20 - Toolbar Menu"
-
-    // Additional Input Controls
     case submitLabel = "21 - Keyboard Submit Label"
     case keyboardTypes = "22 - Keyboard Types"
     case pasteButton = "23 - Paste Button"
     case shareLink = "24 - Share Link"
 
-    // Polish & Enhancement
+    case navigationStack = "13 - Navigation Stack"
+    case sheets = "14 - Sheets"
+    case tabView = "15 - Tab View"
+    case tabViewPages = "16 - Tab View Pages"
+
+    case menus = "17 - Menus"
+    case semanticToolbars = "18 - Semantic Toolbars"
+    case positionalToolbars = "19 - Positional Toolbars"
+    case toolbarMenu = "20 - Toolbar Menu"
+
     case animationsAndTransitions = "25 - Animations & Transitions"
     case searchable = "26 - Searchable"
     case loadingProgress = "27 - Loading Progress"
     case hapticFeedbacks = "28 - Haptic Feedbacks"
     case contentUnavailable = "29 - Content Unavailable"
 
-    // Other Frameworks (non-SwiftUI imports)
     case notifications = "Notifications"
     case requestReview = "Request Review"
     case webView = "WebView"
 
-    // Liquid Glass (Advanced Demos)
     case liquidGlass = "Liquid Glass"
     case liquidGlassButtons = "Liquid Glass Buttons"
     case liquidGlassNamespace = "Liquid Glass Namespace"
     case liquidGlassTransition = "Liquid Glass Transition"
     case liquidGlassBlend = "Liquid Glass Blend"
-    
+    case liquidGlassOnboarding = "Liquid Glass Onboarding"
+
     var id: String { rawValue }
+
+    enum Category {
+        case lessons, frameworks, liquidGlass
+    }
+
+    var category: Category {
+        switch self {
+        case .notifications, .requestReview, .webView:
+            return .frameworks
+        case .liquidGlass, .liquidGlassButtons, .liquidGlassNamespace,
+             .liquidGlassTransition, .liquidGlassBlend, .liquidGlassOnboarding:
+            return .liquidGlass
+        default:
+            return .lessons
+        }
+    }
+
+    static let lessons = allCases.filter { $0.category == .lessons }
+    static let frameworks = allCases.filter { $0.category == .frameworks }
+    static let liquidGlassCases = allCases.filter { $0.category == .liquidGlass }
 }
 
-// Main container view that provides lesson selection and navigation.
 struct ViewPickerContainer: View {
     @State private var selectedView: AppView = .textAndModifiers
-    
+
     var body: some View {
         NavigationStack {
             selectedViewContent
                 .toolbar {
-                    // Hide the View Selector menu for toolbar lessons to avoid confusion
                     if selectedView != .semanticToolbars && selectedView != .positionalToolbars {
                         ToolbarItem(placement: .primaryAction) {
                             Menu {
                                 Picker("Select Lesson", selection: $selectedView) {
-                                    Text("01 - Text & Modifiers").tag(AppView.textAndModifiers)
-                                    Text("02 - Stacks & Spacing").tag(AppView.stacksAndSpacing)
-                                    Text("03 - Images & SF Symbols").tag(AppView.imagesAndSymbols)
-                                    Text("04 - Labels").tag(AppView.labels)
-                                    Text("05 - ScrollView").tag(AppView.scrollView)
-                                    Text("06 - Button Styles").tag(AppView.buttons)
-                                    Text("07 - Toggles").tag(AppView.stateAndButtons)
-                                    Text("08 - Lists").tag(AppView.lists)
-                                    Text("09 - Forms & Sections").tag(AppView.formsAndSections)
-                                    Text("10 - GroupBox").tag(AppView.groupBox)
-                                    Text("11 - Sliders").tag(AppView.sliders)
-                                    Text("12 - Pickers").tag(AppView.pickers)
-                                    Text("13 - Navigation Stack").tag(AppView.navigationStack)
-                                    Text("14 - Sheets").tag(AppView.sheets)
-                                    Text("15 - Tab View").tag(AppView.tabView)
-                                    Text("16 - Tab View Pages").tag(AppView.tabViewPages)
-                                    Text("17 - Menus").tag(AppView.menus)
-                                    Text("18 - Semantic Toolbars").tag(AppView.semanticToolbars)
-                                    Text("19 - Positional Toolbars").tag(AppView.positionalToolbars)
-                                    Text("20 - Toolbar Menu").tag(AppView.toolbarMenu)
-                                    Text("21 - Keyboard Submit Label").tag(AppView.submitLabel)
-                                    Text("22 - Keyboard Types").tag(AppView.keyboardTypes)
-                                    Text("23 - Paste Button").tag(AppView.pasteButton)
-                                    Text("24 - Share Link").tag(AppView.shareLink)
-                                    Text("25 - Animations & Transitions").tag(AppView.animationsAndTransitions)
-                                    Text("26 - Searchable").tag(AppView.searchable)
-                                    Text("27 - Loading Progress").tag(AppView.loadingProgress)
-                                    Text("28 - Haptic Feedbacks").tag(AppView.hapticFeedbacks)
-                                    Text("29 - Content Unavailable").tag(AppView.contentUnavailable)
+                                    ForEach(AppView.lessons) { view in
+                                        Text(view.rawValue).tag(view)
+                                    }
                                 }
 
                                 Divider()
 
-                                // Other Frameworks submenu
                                 Menu("Other Frameworks") {
-                                    Picker("Select Other Framework Lesson", selection: $selectedView) {
-                                        Text("Notifications").tag(AppView.notifications)
-                                        Text("Request Review").tag(AppView.requestReview)
-                                        Text("WebView").tag(AppView.webView)
+                                    Picker("Select Framework", selection: $selectedView) {
+                                        ForEach(AppView.frameworks) { view in
+                                            Text(view.rawValue).tag(view)
+                                        }
                                     }
                                 }
 
-                                // Liquid Glass submenu
                                 Menu("Liquid Glass") {
-                                    Picker("Select Liquid Glass Lesson", selection: $selectedView) {
-                                        Text("Liquid Glass").tag(AppView.liquidGlass)
-                                        Text("Liquid Glass Buttons").tag(AppView.liquidGlassButtons)
-                                        Text("Liquid Glass Namespace").tag(AppView.liquidGlassNamespace)
-                                        Text("Liquid Glass Transition").tag(AppView.liquidGlassTransition)
-                                        Text("Liquid Glass Blend").tag(AppView.liquidGlassBlend)
+                                    Picker("Select Liquid Glass", selection: $selectedView) {
+                                        ForEach(AppView.liquidGlassCases) { view in
+                                            Text(view.rawValue).tag(view)
+                                        }
                                     }
                                 }
                             } label: {
@@ -135,12 +114,7 @@ struct ViewPickerContainer: View {
                 .navigationBarTitleDisplayMode(.inline)
         }
     }
-    
-    // Function to return to the first lesson
-    private func returnToFirstLesson() {
-        selectedView = .textAndModifiers
-    }
-    
+
     @ViewBuilder
     private var selectedViewContent: some View {
         switch selectedView {
@@ -158,14 +132,12 @@ struct ViewPickerContainer: View {
             TogglesView()
         case .lists:
             ListsView()
-        case .navigationStack:
-            NavigationStackView()
-        case .tabView:
-            TabBarView()
-        case .tabViewPages:
-            TabViewPages()
         case .formsAndSections:
             FormsAndSectionsView()
+        case .groupBox:
+            GroupBoxView()
+        case .forEachView:
+            ForEachView()
         case .sliders:
             SlidersView()
         case .pickers:
@@ -178,34 +150,38 @@ struct ViewPickerContainer: View {
             PasteButtonView()
         case .shareLink:
             ShareLinkView()
+        case .navigationStack:
+            NavigationStackView()
+        case .sheets:
+            SheetsView()
+        case .tabView:
+            TabBarView()
+        case .tabViewPages:
+            TabViewPages()
         case .menus:
             MenusView()
+        case .semanticToolbars:
+            SemanticToolbarsView { selectedView = .textAndModifiers }
+        case .positionalToolbars:
+            PositionalToolbarsView { selectedView = .textAndModifiers }
+        case .toolbarMenu:
+            ToolbarMenuView()
         case .animationsAndTransitions:
             AnimationsAndTransitionsView()
         case .searchable:
             SearchableView()
         case .loadingProgress:
             LoadingProgressView()
-        case .notifications:
-            UserNotificationsView()
         case .hapticFeedbacks:
             HapticFeedbacksView()
-        case .requestReview:
-            RequestReviewView()
         case .contentUnavailable:
             ContentUnavailableExampleView()
+        case .notifications:
+            UserNotificationsView()
+        case .requestReview:
+            RequestReviewView()
         case .webView:
             WebContentView()
-        case .semanticToolbars:
-            SemanticToolbarsView(onReturnToFirstLesson: returnToFirstLesson)
-        case .positionalToolbars:
-            PositionalToolbarsView(onReturnToFirstLesson: returnToFirstLesson)
-        case .toolbarMenu:
-            ToolbarMenuView()
-        case .sheets:
-            SheetsView()
-        case .groupBox:
-            GroupBoxView()
         case .buttons:
             ButtonsView()
         case .liquidGlass:
@@ -218,6 +194,8 @@ struct ViewPickerContainer: View {
             LiquidGlassTransitionView()
         case .liquidGlassBlend:
             LiquidGlassBlendView()
+        case .liquidGlassOnboarding:
+            LiquidGlassOnboardingView()
         }
     }
 }
