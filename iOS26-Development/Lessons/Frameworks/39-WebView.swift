@@ -17,7 +17,7 @@ struct WebView: UIViewRepresentable {
 struct WebContentView: View {
     var body: some View {
         WebView(url: URL(string: "https://lorenzomatrullo.dev"))
-            .navigationTitle("WebView")
+            .navigationTitle("39 - WebView")
     }
 }
 

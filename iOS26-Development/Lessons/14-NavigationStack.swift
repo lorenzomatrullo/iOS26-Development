@@ -12,7 +12,7 @@ struct NavigationStackView: View {
                     DetailView(number: index)
                 }
             }
-            .navigationTitle("12 - Navigation Stack")
+            .navigationTitle("14 - Navigation Stack")
             .navigationSubtitle("Sub title of the navigation")
         }
     }

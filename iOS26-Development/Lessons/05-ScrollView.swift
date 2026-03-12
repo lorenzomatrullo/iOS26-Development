@@ -39,7 +39,7 @@ struct ScrollViewView: View {
             }
             .padding()
         }
-        .navigationTitle("04 - ScrollView")
+        .navigationTitle("05 - ScrollView")
     }
 }
 

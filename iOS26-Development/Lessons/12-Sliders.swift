@@ -106,7 +106,7 @@ struct SlidersView: View {
             }
         }
         .listSectionSpacing(20)
-        .navigationTitle("10 - Sliders")
+        .navigationTitle("12 - Sliders")
     }
 }
 

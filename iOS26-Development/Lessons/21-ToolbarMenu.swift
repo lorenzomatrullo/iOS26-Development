@@ -7,7 +7,7 @@ struct ToolbarMenuView: View {
                 .font(.subheadline)
                 .foregroundStyle(.secondary)
         }
-        .navigationTitle("19 - Toolbar Menu")
+        .navigationTitle("21 - Toolbar Menu")
         .navigationBarTitleDisplayMode(.inline)
         .toolbarTitleMenu {
             Button("Show Completed", systemImage: "checkmark.circle") {}

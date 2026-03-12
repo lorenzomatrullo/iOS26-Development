@@ -110,7 +110,7 @@ struct GroupBoxView: View {
             }
             .padding()
         }
-        .navigationTitle("09 - GroupBox")
+        .navigationTitle("10 - GroupBox")
     }
 }
 

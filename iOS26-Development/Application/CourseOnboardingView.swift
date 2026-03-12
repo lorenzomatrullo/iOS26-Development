@@ -8,7 +8,7 @@ struct CourseOnboardingView: View {
             .init(
                 id: 0,
                 title: "iOS 26 Development",
-                subtitle: "Learn SwiftUI from scratch with\n29 hands-on lessons.",
+                subtitle: "Learn SwiftUI from scratch with\n39 hands-on lessons.",
                 screenshot: UIImage(named: "Screen1")
             ),
             .init(

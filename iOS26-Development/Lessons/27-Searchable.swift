@@ -25,7 +25,7 @@ struct SearchableView: View {
                     }
                 }
             }
-            .navigationTitle("Frameworks")
+            .navigationTitle("27 - Searchable")
             .searchable(text: $searchText)
         }
     }

@@ -64,7 +64,7 @@ struct KeyboardSubmitLabelView: View {
                     .submitLabel(.search)
             }
         }
-        .navigationTitle("Keyboard Submit Labels")
+        .navigationTitle("22 - Keyboard Submit Label")
         .navigationBarTitleDisplayMode(.inline)
     }
 }

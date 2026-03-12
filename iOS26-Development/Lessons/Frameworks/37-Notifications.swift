@@ -38,7 +38,7 @@ struct UserNotificationsView: View {
                     .foregroundStyle(.secondary)
             }
         }
-        .navigationTitle("23 - Notifications")
+        .navigationTitle("37 - Notifications")
         .task {
             UNUserNotificationCenter.current().delegate = notificationDelegate
             await requestAuthorization()

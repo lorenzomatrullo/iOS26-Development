@@ -74,7 +74,7 @@ struct HapticFeedbacksView: View {
                     .foregroundStyle(.secondary)
             }
         }
-        .navigationTitle("24 - Haptic Feedbacks")
+        .navigationTitle("29 - Haptic Feedbacks")
     }
 }
 

@@ -9,7 +9,7 @@ struct PositionalToolbarsView: View {
             VStack {
 
             }
-            .navigationTitle("17 - Positional Toolbars")
+            .navigationTitle("20 - Positional Toolbars")
             .navigationSubtitle("grouping, spacers and bottom bars")
             .navigationBarTitleDisplayMode(.large)
             .toolbar {

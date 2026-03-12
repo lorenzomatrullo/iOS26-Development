@@ -75,7 +75,7 @@ struct KeyboardTypesView: View {
                     .keyboardType(.namePhonePad)
             }
         }
-        .navigationTitle("Keyboard Types")
+        .navigationTitle("23 - Keyboard Types")
         .navigationBarTitleDisplayMode(.inline)
     }
 }

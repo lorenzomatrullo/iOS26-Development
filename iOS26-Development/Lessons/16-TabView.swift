@@ -60,7 +60,7 @@ struct TabBarView: View {
             MiniPlayerView()
         }
         .tabBarMinimizeBehavior(.onScrollDown)
-        .navigationTitle("14 - Tab View")
+        .navigationTitle("16 - Tab View")
     }
 }
 

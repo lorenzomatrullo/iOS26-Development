@@ -17,7 +17,7 @@ struct TabViewPages: View {
         }
         .tabViewStyle(.page)
         .indexViewStyle(.page(backgroundDisplayMode: .always))
-        .navigationTitle("- Tab View Pages")
+        .navigationTitle("17 - Tab View Pages")
         .navigationBarTitleDisplayMode(.inline)
     }
 }

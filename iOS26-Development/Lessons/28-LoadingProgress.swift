@@ -32,7 +32,7 @@ struct LoadingProgressView: View {
                     .foregroundStyle(.secondary)
             }
         }
-        .navigationTitle("22 - Loading Progress")
+        .navigationTitle("28 - Loading Progress")
     }
 }
 

@@ -10,7 +10,7 @@ struct ForEachView: View {
                 Text(fruit)
             }
         }
-        .navigationTitle("ForEach")
+        .navigationTitle("11 - ForEach")
         .navigationBarTitleDisplayMode(.inline)
     }
 }

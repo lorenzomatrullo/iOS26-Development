@@ -9,7 +9,7 @@ struct SemanticToolbarsView: View {
             VStack {
                 EmptyView()
             }
-            .navigationTitle("16 - Semantic Toolbars")
+            .navigationTitle("19 - Semantic Toolbars")
             .navigationSubtitle("semantic toolbar placement")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {

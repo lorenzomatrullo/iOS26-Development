@@ -7,68 +7,61 @@ enum AppView: String, CaseIterable, Identifiable {
     case labels = "04 - Labels"
     case scrollView = "05 - ScrollView"
     case buttons = "06 - Button Styles"
-    case stateAndButtons = "07 - Toggles"
-
+    case toggles = "07 - Toggles"
     case lists = "08 - Lists"
     case formsAndSections = "09 - Forms & Sections"
     case groupBox = "10 - GroupBox"
-    case forEachView = "ForEach"
-
-    case sliders = "11 - Sliders"
-    case pickers = "12 - Picker Styles"
-    case submitLabel = "21 - Keyboard Submit Label"
-    case keyboardTypes = "22 - Keyboard Types"
-    case pasteButton = "23 - Paste Button"
-    case shareLink = "24 - Share Link"
-
-    case navigationStack = "13 - Navigation Stack"
-    case sheets = "14 - Sheets"
-    case tabView = "15 - Tab View"
-    case tabViewPages = "16 - Tab View Pages"
-
-    case menus = "17 - Menus"
-    case semanticToolbars = "18 - Semantic Toolbars"
-    case positionalToolbars = "19 - Positional Toolbars"
-    case toolbarMenu = "20 - Toolbar Menu"
-
-    case animationsAndTransitions = "25 - Animations & Transitions"
-    case searchable = "26 - Searchable"
-    case loadingProgress = "27 - Loading Progress"
-    case hapticFeedbacks = "28 - Haptic Feedbacks"
-    case contentUnavailable = "29 - Content Unavailable"
-
-    case notifications = "Notifications"
-    case requestReview = "Request Review"
-    case webView = "WebView"
-
-    case liquidGlass = "Liquid Glass"
-    case liquidGlassButtons = "Liquid Glass Buttons"
-    case liquidGlassNamespace = "Liquid Glass Namespace"
-    case liquidGlassTransition = "Liquid Glass Transition"
-    case liquidGlassBlend = "Liquid Glass Blend"
-    case liquidGlassOnboarding = "Liquid Glass Onboarding"
+    case forEachView = "11 - ForEach"
+    case sliders = "12 - Sliders"
+    case pickers = "13 - Picker Styles"
+    case navigationStack = "14 - Navigation Stack"
+    case sheets = "15 - Sheets"
+    case tabView = "16 - Tab View"
+    case tabViewPages = "17 - Tab View Pages"
+    case menus = "18 - Menus"
+    case semanticToolbars = "19 - Semantic Toolbars"
+    case positionalToolbars = "20 - Positional Toolbars"
+    case toolbarMenu = "21 - Toolbar Menu"
+    case submitLabel = "22 - Keyboard Submit Label"
+    case keyboardTypes = "23 - Keyboard Types"
+    case pasteButton = "24 - Paste Button"
+    case shareLink = "25 - Share Link"
+    case animationsAndTransitions = "26 - Animations & Transitions"
+    case searchable = "27 - Searchable"
+    case loadingProgress = "28 - Loading Progress"
+    case hapticFeedbacks = "29 - Haptic Feedbacks"
+    case contentUnavailable = "30 - Content Unavailable"
+    case liquidGlass = "31 - Liquid Glass"
+    case liquidGlassButtons = "32 - Liquid Glass Buttons"
+    case liquidGlassNamespace = "33 - Liquid Glass Namespace"
+    case liquidGlassTransition = "34 - Liquid Glass Transition"
+    case liquidGlassBlend = "35 - Liquid Glass Blend"
+    case liquidGlassOnboarding = "36 - Liquid Glass Onboarding"
+    case notifications = "37 - Notifications"
+    case requestReview = "38 - Request Review"
+    case webView = "39 - WebView"
 
     var id: String { rawValue }
 
     enum Category {
-        case lessons, frameworks, liquidGlass
+        case lessons, liquidGlass, frameworks
     }
 
     var category: Category {
         switch self {
-        case .notifications, .requestReview, .webView:
-            return .frameworks
         case .liquidGlass, .liquidGlassButtons, .liquidGlassNamespace,
              .liquidGlassTransition, .liquidGlassBlend, .liquidGlassOnboarding:
             return .liquidGlass
+        case .notifications, .requestReview, .webView:
+            return .frameworks
         default:
             return .lessons
         }
     }
 
     static let lessons = allCases.filter { $0.category == .lessons }
-    static let frameworks = allCases.filter { $0.category == .frameworks }
     static let liquidGlassCases = allCases.filter { $0.category == .liquidGlass }
+    static let frameworks = allCases.filter { $0.category == .frameworks }
 }
 
 struct ViewPickerContainer: View {
@@ -89,14 +82,6 @@ struct ViewPickerContainer: View {
 
                                 Divider()
 
-                                Menu("Other Frameworks") {
-                                    Picker("Select Framework", selection: $selectedView) {
-                                        ForEach(AppView.frameworks) { view in
-                                            Text(view.rawValue).tag(view)
-                                        }
-                                    }
-                                }
-
                                 Menu("Liquid Glass") {
                                     Picker("Select Liquid Glass", selection: $selectedView) {
                                         ForEach(AppView.liquidGlassCases) { view in
@@ -104,8 +89,16 @@ struct ViewPickerContainer: View {
                                         }
                                     }
                                 }
+
+                                Menu("Frameworks") {
+                                    Picker("Select Framework", selection: $selectedView) {
+                                        ForEach(AppView.frameworks) { view in
+                                            Text(view.rawValue).tag(view)
+                                        }
+                                    }
+                                }
                             } label: {
-                                Label("View Selector", systemImage: "rectangle.stack")
+                                Label("Lesson Picker", systemImage: "rectangle.stack")
                             }
                         }
                     }
@@ -128,7 +121,7 @@ struct ViewPickerContainer: View {
             LabelsView()
         case .scrollView:
             ScrollViewView()
-        case .stateAndButtons:
+        case .toggles:
             TogglesView()
         case .lists:
             ListsView()

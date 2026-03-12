@@ -81,7 +81,7 @@ struct ContentUnavailableExampleView: View {
         }
         .tabViewStyle(.page)
         .indexViewStyle(.page(backgroundDisplayMode: .always))
-        .navigationTitle("26 - Content Unavailable")
+        .navigationTitle("30 - Content Unavailable")
         .navigationBarTitleDisplayMode(.inline)
     }
 }
