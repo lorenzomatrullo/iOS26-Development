@@ -272,3 +272,14 @@ struct iOS26StyleOnBoarding: View {
         .interpolatingSpring(duration: 0.65, bounce: 0, initialVelocity: 0)
     }
 }
+
+#Preview {
+    iOS26StyleOnBoarding(
+        items: [
+            .init(id: 0, title: "Welcome", subtitle: "Get started with the app"),
+            .init(id: 1, title: "Explore", subtitle: "Discover new features"),
+            .init(id: 2, title: "Enjoy", subtitle: "Have a great experience")
+        ],
+        onComplete: {}
+    )
+}
